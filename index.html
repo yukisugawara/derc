@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>阪大ふくふくセンター | 大阪大学大学院人文学研究科附属 複言語・複文化共存社会研究センター</title>
+<meta name="description" content="外国にルーツを持つ子どもたちへの支援活動を中心に行う、大阪大学大学院人文学研究科附属 複言語・複文化共存社会研究センター（阪大ふくふくセンター）。" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=DM+Serif+Display&family=Inter:wght@400;600;800;900&family=Archivo+Black&family=Yuji+Mai&family=RocknRoll+One&family=Caveat:wght@700&family=Kiwi+Maru:wght@500&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          jp: ['"Zen Kaku Gothic New"', '"Noto Sans JP"', 'sans-serif'],
+          display: ['"DM Serif Display"', '"Zen Kaku Gothic New"', 'serif'],
+          rock: ['"RocknRoll One"', '"Zen Kaku Gothic New"', 'sans-serif'],
+          mai: ['"Yuji Mai"', 'serif'],
+          en: ['Inter', 'sans-serif'],
+          chunky: ['"Archivo Black"', 'Inter', 'sans-serif'],
+          hand: ['Caveat', '"Zen Kaku Gothic New"', 'cursive'],
+        },
+        colors: {
+          peach: '#FFB8A8', sky2: '#A8D8FF', lemon: '#FFE98A',
+          mint: '#B8F2D8', lilac: '#D8B8FF', ink: '#1a1530',
+          acid: '#D6FF3C', hotpink: '#FF3D8A', tangerine: '#FF7A3D',
+          blueberry: '#4D6BFF', grape: '#7B3DFF',
+        },
+        animation: {
+          'blob': 'blob 18s infinite',
+          'float': 'float 6s ease-in-out infinite',
+          'marquee': 'marquee 50s linear infinite',
+          'marquee-r': 'marquee-r 45s linear infinite',
+          'shine': 'shine 5s linear infinite',
+          'spin-slow': 'spin 25s linear infinite',
+          'spin-rev': 'spin-rev 30s linear infinite',
+          'wiggle': 'wiggle 3s ease-in-out infinite',
+          'bounce-slow': 'bounce 3s ease-in-out infinite',
+          'glitch': 'glitch 4s infinite',
+        },
+        keyframes: {
+          blob: { '0%,100%':{transform:'translate(0,0) scale(1)'},'33%':{transform:'translate(40px,-60px) scale(1.15)'},'66%':{transform:'translate(-30px,30px) scale(0.9)'}},
+          float: { '0%,100%':{transform:'translateY(0) rotate(-2deg)'},'50%':{transform:'translateY(-18px) rotate(4deg)'}},
+          marquee: { '0%':{transform:'translateX(0)'},'100%':{transform:'translateX(-50%)'}},
+          'marquee-r': { '0%':{transform:'translateX(-50%)'},'100%':{transform:'translateX(0)'}},
+          shine: { '0%':{backgroundPosition:'-200% center'},'100%':{backgroundPosition:'200% center'}},
+          'spin-rev': { from:{transform:'rotate(0deg)'},to:{transform:'rotate(-360deg)'}},
+          wiggle: { '0%,100%':{transform:'rotate(-6deg)'},'50%':{transform:'rotate(6deg)'}},
+          glitch: { '0%,90%,100%':{textShadow:'3px 0 0 #FF3D8A, -3px 0 0 #4D6BFF'},'92%':{textShadow:'-3px 2px 0 #D6FF3C, 3px -2px 0 #FF3D8A'},'94%':{textShadow:'3px -2px 0 #4D6BFF, -3px 2px 0 #D6FF3C'}},
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif; color:#1a1530; background:#fff9f5; overflow-x:hidden; }
+  .grad-bg {
+    background:
+      radial-gradient(1200px 600px at 10% 0%, rgba(255,184,168,.55), transparent 60%),
+      radial-gradient(900px 500px at 90% 10%, rgba(168,216,255,.55), transparent 60%),
+      radial-gradient(900px 700px at 50% 100%, rgba(216,184,255,.45), transparent 60%),
+      linear-gradient(180deg,#fff9f5 0%,#fef3f7 40%,#f3f8ff 100%);
+  }
+  .glass { background:rgba(255,255,255,0.55); backdrop-filter:blur(22px) saturate(160%); -webkit-backdrop-filter:blur(22px) saturate(160%); border:1px solid rgba(255,255,255,0.7); }
+  .glass-dark { background:rgba(26,21,48,0.6); backdrop-filter:blur(22px) saturate(160%); border:1px solid rgba(255,255,255,0.12); }
+  .text-gradient { background:linear-gradient(110deg,#ff6a88 0%,#ff9a7a 25%,#ffc15e 50%,#68b7ff 75%,#b48cff 100%); -webkit-background-clip:text; background-clip:text; color:transparent; background-size:200% auto; animation:shine 5s linear infinite; }
+  .noise::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.06;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.7'/></svg>");}
+  .sticker { filter: drop-shadow(0 12px 24px rgba(255,120,120,0.25)); }
+  .chip { display:inline-flex; align-items:center; gap:.4rem; padding:.4rem .9rem; border-radius:999px; background:rgba(255,255,255,.7); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.9); font-size:.8rem; font-weight:500; letter-spacing:.02em; }
+  .card-hover { transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s; }
+  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -20px rgba(120,80,180,.25); }
+  .bento { border-radius: 2rem; position:relative; overflow:hidden; }
+  .bento::after{ content:""; position:absolute; inset:0; border-radius:inherit; background: linear-gradient(135deg, rgba(255,255,255,.4), rgba(255,255,255,0) 50%); pointer-events:none; }
+  .underline-wave { background-image: linear-gradient(transparent 65%, rgba(255,180,100,.55) 65%); background-repeat: no-repeat; }
+  .marquee-wrap { mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent); }
+  .ring-glow { box-shadow: 0 0 0 1px rgba(255,255,255,.6) inset, 0 25px 50px -12px rgba(180,100,200,.25); }
+  .btn-primary { background:linear-gradient(110deg,#ff6a88,#ffb25e); color:white; font-weight:700; padding:.9rem 1.6rem; border-radius:999px; box-shadow:0 10px 30px -10px rgba(255,100,130,.6); transition:transform .3s, box-shadow .3s; display:inline-flex; align-items:center; gap:.5rem; }
+  .btn-primary:hover { transform: translateY(-2px) scale(1.02); box-shadow:0 18px 40px -10px rgba(255,100,130,.7); }
+  .btn-ghost { background:rgba(255,255,255,.7); color:#1a1530; font-weight:600; padding:.85rem 1.5rem; border-radius:999px; border:1px solid rgba(26,21,48,.1); backdrop-filter:blur(10px); transition:all .3s; display:inline-flex; align-items:center; gap:.5rem; }
+  .btn-ghost:hover { background:white; border-color:#1a1530; }
+  .scroll-reveal { opacity:0; transform: translateY(30px); transition: all 1s cubic-bezier(.2,.8,.2,1); }
+  .scroll-reveal.in { opacity:1; transform: none; }
+  .nav-blur { background:rgba(255,249,245,.75); backdrop-filter:blur(20px) saturate(180%); }
+  .prose-center p { line-height: 2.1; margin-bottom: 1.2rem; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  .dropdown:hover .dropdown-menu { opacity:1; visibility:visible; transform: translateY(0); }
+  .dropdown-menu { opacity:0; visibility:hidden; transform: translateY(8px); transition: all .25s; }
+  @media (prefers-reduced-motion: reduce){ *,*::before,*::after { animation-duration:0.001s!important; transition-duration:0.001s!important; } }
+
+  /* ============ Z世代ブチ上げ追加スタイル ============ */
+  /* グレイン・ノイズ全面 */
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:9999;
+    opacity:.08; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  /* カーソルスポットライト */
+  .spot-wrap { position: relative; }
+  .spot-wrap::before{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background: radial-gradient(400px circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.35), transparent 50%);
+    transition: opacity .3s;
+  }
+  /* ホログラフィック文字 */
+  .holo {
+    background: linear-gradient(110deg,#FF3D8A 0%,#FF7A3D 20%,#D6FF3C 40%,#4D6BFF 60%,#7B3DFF 80%,#FF3D8A 100%);
+    background-size: 300% auto;
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+    animation: shine 4s linear infinite;
+    filter: drop-shadow(0 2px 0 rgba(0,0,0,.08));
+  }
+  /* 太字アウトライン文字 */
+  .stroke-text {
+    color: transparent;
+    -webkit-text-stroke: 2px #1a1530;
+  }
+  .stroke-white { color: transparent; -webkit-text-stroke: 2px #fff; }
+  /* ステッカー風 */
+  .sticker-card {
+    background: white; border: 3px solid #1a1530;
+    box-shadow: 6px 6px 0 #1a1530;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .sticker-card:hover { transform: translate(-3px,-3px); box-shadow: 10px 10px 0 #1a1530; }
+  .sticker-acid { background:#D6FF3C; border:3px solid #1a1530; box-shadow:6px 6px 0 #1a1530; }
+  .sticker-pink { background:#FF3D8A; color:white; border:3px solid #1a1530; box-shadow:6px 6px 0 #1a1530; }
+  .sticker-blue { background:#4D6BFF; color:white; border:3px solid #1a1530; box-shadow:6px 6px 0 #1a1530; }
+  .sticker-orange { background:#FF7A3D; color:white; border:3px solid #1a1530; box-shadow:6px 6px 0 #1a1530; }
+  /* マスキングテープ */
+  .tape {
+    position: absolute; padding:.3rem 1.5rem;
+    background: linear-gradient(135deg, rgba(214,255,60,.85), rgba(255,232,138,.85));
+    transform: rotate(-4deg); font-family:'Caveat',cursive; font-weight:700; color:#1a1530;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  }
+  .tape::before, .tape::after {
+    content:""; position:absolute; top:0; bottom:0; width:8px;
+    background-image: radial-gradient(circle, transparent 2px, rgba(214,255,60,.85) 2px);
+    background-size: 6px 6px;
+  }
+  /* アニメグラデ枠 */
+  .ani-border {
+    position: relative; border-radius: 2rem; padding: 3px;
+    background: linear-gradient(110deg,#FF3D8A,#FF7A3D,#D6FF3C,#4D6BFF,#7B3DFF,#FF3D8A);
+    background-size: 300% auto;
+    animation: shine 4s linear infinite;
+  }
+  .ani-border > * { border-radius: calc(2rem - 3px); }
+  /* セクション巨大番号 */
+  .mega-num {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(8rem, 20vw, 18rem);
+    line-height: .8;
+    letter-spacing: -.05em;
+  }
+  /* 波形ディバイダー */
+  .wavy-top, .wavy-bot { position:relative; }
+  /* ドットグリッド背景 */
+  .dotgrid-bg { background-image: radial-gradient(#1a153030 1.5px, transparent 1.5px); background-size: 24px 24px; }
+  /* 回転スターバッジ */
+  .star-badge {
+    display:inline-flex; align-items:center; justify-content:center;
+    width:90px; height:90px; color:#1a1530; font-weight:900;
+    background: #D6FF3C; -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 0 L58 30 L90 22 L68 46 L100 50 L68 54 L90 78 L58 70 L50 100 L42 70 L10 78 L32 54 L0 50 L32 46 L10 22 L42 30 Z'/></svg>") center/contain no-repeat;
+            mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 0 L58 30 L90 22 L68 46 L100 50 L68 54 L90 78 L58 70 L50 100 L42 70 L10 78 L32 54 L0 50 L32 46 L10 22 L42 30 Z'/></svg>") center/contain no-repeat;
+    font-size:.7rem; text-align:center;
+  }
+  /* 3Dチルト */
+  .tilt { transition: transform .4s cubic-bezier(.2,.8,.2,1); transform-style: preserve-3d; }
+  .tilt:hover { transform: perspective(800px) rotateX(4deg) rotateY(-4deg) translateY(-4px); }
+  /* スクロール時にグラデ */
+  .scroll-grad {
+    background: linear-gradient(180deg,#FFE98A 0%,#FFB8A8 25%,#FF3D8A 50%,#7B3DFF 75%,#4D6BFF 100%);
+  }
+  /* 巨大リボン */
+  .ribbon {
+    background: #1a1530; color: #D6FF3C;
+    padding: .8rem 2rem; border-radius: 999px;
+    font-family: 'Archivo Black', sans-serif; letter-spacing: .05em;
+    display: inline-block; transform: rotate(-2deg);
+    box-shadow: 4px 4px 0 #FF3D8A;
+  }
+  /* ハンドライティング */
+  .handwrite { font-family:'Caveat', cursive; }
+  /* スクライブル下線 */
+  .scribble {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 20'><path d='M5 15 Q50 2 100 12 T200 10 T295 14' stroke='%23FF3D8A' stroke-width='4' fill='none' stroke-linecap='round'/></svg>");
+    background-repeat: no-repeat; background-position: bottom; background-size: 100% 14px;
+    padding-bottom: 10px;
+  }
+  /* 円形テキスト回転 */
+  .circle-text { animation: spin 20s linear infinite; }
+
+  /* ================================================ */
+  /* ===== BRIGHT MAKEOVER — 明るく・柔らかく・馴染む ===== */
+  /* ================================================ */
+  body {
+    color: #4a3d5a;
+    font-family: 'Zen Maru Gothic', 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+    background:
+      radial-gradient(1200px 800px at 10% 0%,    rgba(255,190,210,.85), transparent 55%),
+      radial-gradient(1100px 700px at 90% 5%,    rgba(255,210,170,.85), transparent 55%),
+      radial-gradient(1300px 900px at 0% 45%,    rgba(255,220,195,.65), transparent 55%),
+      radial-gradient(1400px 1000px at 100% 55%, rgba(195,210,255,.75), transparent 55%),
+      radial-gradient(1200px 900px at 20% 100%,  rgba(255,195,225,.7), transparent 55%),
+      radial-gradient(1400px 1000px at 100% 100%,rgba(215,180,255,.7), transparent 55%),
+      linear-gradient(180deg,#fff1ec 0%,#ffe8ed 20%,#ffe0e6 40%,#ece2ff 65%,#dde6ff 100%);
+    background-attachment: fixed;
+  }
+  /* フィルムグレイン（エモい粒子感） */
+  body::before { opacity: .06; mix-blend-mode: overlay; }
+  /* ソフトビネット（周辺減光で映画っぽく） */
+  body::after {
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:3;
+    background: radial-gradient(ellipse at center, transparent 55%, rgba(120,80,140,.08) 100%);
+  }
+
+  /* すべてのセクション背景を透明に → body のグラデを活かす */
+  section { background: transparent !important; }
+
+  /* タイポを丸く */
+  .font-rock, .font-chunky, h1, h2, h3 { font-family: 'Zen Maru Gothic','Kiwi Maru','Zen Kaku Gothic New',sans-serif !important; font-weight: 900 !important; letter-spacing: .01em; }
+  .font-chunky { color: rgba(255,170,150,.35); }
+
+  /* セクション用グラデユーティリティ */
+  .grad-bg {
+    background:
+      radial-gradient(1200px 600px at 10% 0%, rgba(255,220,210,.55), transparent 60%),
+      radial-gradient(900px 500px at 90% 10%, rgba(210,230,255,.55), transparent 60%),
+      radial-gradient(900px 700px at 50% 100%, rgba(230,215,255,.4), transparent 60%);
+  }
+
+  /* ====== カード（ふんわり白＋カラーシャドウ） ====== */
+  .sticker-card {
+    background: rgba(255,255,255,.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,.9);
+    border-radius: 2rem;
+    box-shadow: 0 14px 40px -18px rgba(200,160,220,.25), 0 2px 6px rgba(220,190,200,.08);
+    transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s;
+  }
+  .sticker-card:hover { transform: translateY(-5px); box-shadow: 0 24px 48px -18px rgba(200,160,220,.35); }
+
+  .sticker-pink   { background:linear-gradient(135deg,#ffe4ec,#ffd4e0) !important; color:#a4526c !important; border:1px solid rgba(255,200,215,.7) !important; box-shadow:0 10px 24px -12px rgba(255,160,180,.35) !important; }
+  .sticker-acid   { background:linear-gradient(135deg,#f1f8d9,#e5f2b8) !important; color:#6b8040 !important; border:1px solid rgba(210,230,160,.7) !important; box-shadow:0 10px 24px -12px rgba(180,210,130,.3) !important; }
+  .sticker-blue   { background:linear-gradient(135deg,#e4eeff,#d4e3ff) !important; color:#4c679c !important; border:1px solid rgba(190,215,255,.7) !important; box-shadow:0 10px 24px -12px rgba(160,200,255,.3) !important; }
+  .sticker-orange { background:linear-gradient(135deg,#ffe8d7,#ffd9bc) !important; color:#a05c36 !important; border:1px solid rgba(255,215,185,.7) !important; box-shadow:0 10px 24px -12px rgba(255,180,150,.3) !important; }
+
+  /* glass を明るく */
+  .glass { background: rgba(255,255,255,.72) !important; border:1px solid rgba(255,255,255,.9) !important; }
+
+  /* ====== 明るい Bento カラーパレット ====== */
+  .bento-peach  { background: linear-gradient(135deg,#ffd4c0,#ffb9a0) !important; color:#7a3d2e !important; }
+  .bento-sky    { background: linear-gradient(135deg,#c7e0ff,#a8c8ff) !important; color:#2d487a !important; }
+  .bento-lemon  { background: linear-gradient(135deg,#fff0a8,#ffe080) !important; color:#7a5a20 !important; }
+  .bento-mint   { background: linear-gradient(135deg,#c8f0d8,#a8e0c0) !important; color:#2d6b46 !important; }
+  .bento-lilac  { background: linear-gradient(135deg,#e4d4ff,#d0baff) !important; color:#55307a !important; }
+  .bento-rose   { background: linear-gradient(135deg,#ffd8dc,#ffbac5) !important; color:#7a2d46 !important; }
+
+  /* 濃紺 → 明るいパステル（既存のカード） */
+  .from-ink { --tw-gradient-from:#ffe3d4 var(--tw-gradient-from-position) !important; }
+  .to-indigo-900, .to-purple-900 { --tw-gradient-to:#d4c0f0 var(--tw-gradient-to-position) !important; }
+  section .text-white, #contact .text-white { color: #4a3d5a !important; }
+  section .bg-gradient-to-br.from-ink { color: #4a3d5a !important; }
+  .glass-dark { background: rgba(255,255,255,.75) !important; border:1px solid rgba(255,255,255,.9) !important; color: #4a3d5a !important; }
+  .glass-dark .text-white\/50 { color: #8a7d9a !important; }
+  .glass-dark .opacity-60, .glass-dark .opacity-80, .glass-dark .opacity-90, .glass-dark .opacity-75 { opacity: 1 !important; }
+
+  /* ====== ボタン ====== */
+  .btn-primary {
+    background: linear-gradient(110deg,#ffb8c8 0%,#ffd0a8 50%,#ffe6a8 100%);
+    color:#7a3d52; font-weight:700;
+    padding: 1rem 1.8rem; border-radius: 999px;
+    box-shadow: 0 12px 28px -10px rgba(255,170,180,.55);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -10px rgba(255,150,170,.65); }
+  .btn-ghost {
+    background: rgba(255,255,255,.9); color:#5a4a6e; font-weight:600;
+    padding:.95rem 1.7rem; border-radius:999px; border:1px solid rgba(255,200,180,.55);
+  }
+  .btn-ghost:hover { background:white; border-color:rgba(255,170,140,.8); }
+
+  /* ====== CTA（お問い合わせ） ====== */
+  #contact {
+    background:
+      radial-gradient(1000px 600px at 20% 20%, rgba(255,215,225,.9), transparent 60%),
+      radial-gradient(1000px 600px at 80% 80%, rgba(210,230,255,.9), transparent 60%),
+      linear-gradient(180deg,#fff5ee,#fff0f6,#eef5ff) !important;
+    color:#4a3d5a !important;
+  }
+  #contact .glass-dark { background: rgba(255,255,255,.75) !important; color:#4a3d5a !important; }
+  #contact h2 { color:#4a3d5a; }
+  #contact .text-white\/70, #contact .text-white\/50 { color:#6a5d7a !important; }
+
+  /* ====== フッター（白っぽく） ====== */
+  footer {
+    background: linear-gradient(180deg,#eef5ff 0%,#f5ecff 100%) !important;
+    color:#5a4a6e !important;
+  }
+  footer .text-white\/40, footer .text-white\/50, footer .text-white\/60, footer .text-white\/70, footer .text-white\/80 { color:#8a7d9a !important; }
+  footer .hover\:text-white:hover { color:#4a3d5a !important; }
+  footer .brightness-0.invert { filter:none !important; }
+  footer .border-white\/10 { border-color:rgba(160,140,180,.2) !important; }
+
+  /* ====== ナビ ====== */
+  .nav-blur { background: rgba(255,249,243,.8); }
+
+  /* ====== 装飾 ====== */
+  .holo {
+    background: linear-gradient(110deg,#ffa6b9 0%,#ffbd94 25%,#ffe08a 50%,#a8d6ff 75%,#c9a8ff 100%);
+    background-size: 300% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation: shine 8s linear infinite;
+  }
+  .underline-wave { background-image: linear-gradient(transparent 65%, rgba(255,190,160,.55) 65%); }
+  .scribble {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 20'><path d='M5 15 Q50 2 100 12 T200 10 T295 14' stroke='%23FFB3BF' stroke-width='5' fill='none' stroke-linecap='round'/></svg>");
+  }
+  .stroke-text { -webkit-text-stroke: 1.5px rgba(255,180,160,.35); color:transparent; }
+  .mega-num { color: rgba(255,190,175,.25); }
+  .star-badge { background:#ffd8d4 !important; color:#a0526a !important; }
+  .ribbon {
+    background: linear-gradient(135deg,#fff0d8,#ffe4c8);
+    color: #a0526a;
+    border: 1px solid rgba(255,200,170,.6);
+    box-shadow: 0 6px 16px -6px rgba(255,180,160,.35);
+    font-weight:700; padding:.6rem 1.4rem;
+    transform: rotate(-1.5deg);
+  }
+  .ani-border { background: linear-gradient(110deg,#ffc4d4,#ffd9b8,#d8f0b8,#b8d8ff,#ffc4d4); background-size:300% auto; }
+  .handwrite { color:#d48398; }
+
+  /* tailwind の濃い背景クラスを明るく上書き */
+  .bg-ink { background:#fff5ee !important; }
+  .bg-\[\#0f0b1f\] { background: linear-gradient(180deg,#eef5ff,#f5ecff) !important; }
+
+  /* ====== エモい追加レイヤー ====== */
+  /* 見出しにソフトグロー */
+  h1, h2 { text-shadow: 0 2px 24px rgba(255,180,200,.35), 0 1px 0 rgba(255,255,255,.6); }
+
+  /* キラキラ（Sparkles） */
+  .sparkle {
+    position: fixed; pointer-events: none; z-index: 2;
+    width: 12px; height: 12px; opacity: .7;
+    background:
+      linear-gradient(90deg, transparent 46%, rgba(255,200,220,.9) 50%, transparent 54%),
+      linear-gradient(0deg,  transparent 46%, rgba(255,220,180,.9) 50%, transparent 54%);
+    animation: twinkle 3.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 4px rgba(255,200,220,.7));
+  }
+  @keyframes twinkle {
+    0%,100% { transform: scale(.6) rotate(0deg); opacity:.2; }
+    50% { transform: scale(1) rotate(180deg); opacity:.9; }
+  }
+
+  /* ハートの浮遊 */
+  .heart-drift {
+    position: fixed; pointer-events:none; z-index:2;
+    width: 14px; height: 14px; opacity: .45;
+    background: radial-gradient(circle at 30% 25%, #ffc8d8 0%, #ff9ab2 100%);
+    clip-path: path('M7 13 C 2 9, -1 5, 3 2 C 5 0, 7 2, 7 4 C 7 2, 9 0, 11 2 C 15 5, 12 9, 7 13 Z');
+    animation: drift 9s ease-in-out infinite;
+  }
+  @keyframes drift {
+    0% { transform: translateY(0) rotate(-10deg); opacity:0; }
+    15% { opacity:.55; }
+    100% { transform: translateY(-70vh) rotate(15deg); opacity:0; }
+  }
+
+  /* レンズフレア的グローを hero に */
+  #top::before {
+    content:""; position:absolute; top:-10%; right:-5%; width:420px; height:420px;
+    background: radial-gradient(circle, rgba(255,230,180,.9), rgba(255,200,210,.3) 40%, transparent 70%);
+    pointer-events:none; filter: blur(20px); animation: glow 8s ease-in-out infinite alternate;
+  }
+  @keyframes glow { 0%{opacity:.5;transform:translate(0,0);} 100%{opacity:.9;transform:translate(-30px,20px);} }
+
+  /* カードをよりドリーミーに */
+  .sticker-card { box-shadow: 0 14px 40px -16px rgba(255,160,190,.28), 0 2px 6px rgba(220,190,230,.12); }
+  .sticker-card:hover { box-shadow: 0 28px 56px -18px rgba(255,160,190,.4), 0 0 0 1px rgba(255,200,220,.5); }
+
+  /* セクション見出しの装飾キーワード */
+  .emo-tag {
+    display:inline-block; padding: .25rem .8rem; border-radius: 999px;
+    background: linear-gradient(110deg,#ffd5dc,#ffd9b8,#d8e0ff);
+    color:#7a4a6a; font-family:'Caveat',cursive; font-size:1.15rem; font-weight:700;
+    border:1px solid rgba(255,255,255,.8);
+    transform: rotate(-2deg);
+    box-shadow: 0 6px 16px -6px rgba(255,180,200,.35);
+  }
+
+  /* 区切り波線 */
+  .wavy-divider {
+    height: 28px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 28' preserveAspectRatio='none'><path d='M0 14 Q15 2 30 14 T60 14 T90 14 T120 14' stroke='%23ffc4d4' stroke-width='3' fill='none' stroke-linecap='round'/></svg>");
+    background-repeat: repeat-x; background-size: 120px 28px;
+    opacity:.6;
+  }
+
+  /* hero の blob を鮮やかに */
+  #top .from-peach { --tw-gradient-from:#ffb8d0 var(--tw-gradient-from-position) !important; }
+  #top .to-lemon { --tw-gradient-to:#ffe0a8 var(--tw-gradient-to-position) !important; }
+  #top .from-sky2 { --tw-gradient-from:#c8d8ff var(--tw-gradient-from-position) !important; }
+  #top .to-lilac { --tw-gradient-to:#e4c8ff var(--tw-gradient-to-position) !important; }
+  #top .from-mint { --tw-gradient-from:#c8f0d0 var(--tw-gradient-from-position) !important; }
+
+  /* ================================================ */
+  /* ===== APPLE MINIMAL FINAL PASS ===== */
+  /* ================================================ */
+  /* グレイン・ビネット・レンズフレアを無効化 */
+  body::before { display:none !important; }
+  body::after { display:none !important; }
+  #top::before { display:none !important; }
+
+  /* 見出しのグロー削除 → シャープに */
+  h1, h2, h3, h4 { text-shadow: none !important; letter-spacing: -0.02em !important; }
+
+  /* 背景：淡いアップル風に */
+  body {
+    background:
+      radial-gradient(1200px 700px at 15% 0%, rgba(255,205,220,.55), transparent 55%),
+      radial-gradient(1100px 700px at 85% 10%, rgba(255,220,185,.55), transparent 55%),
+      radial-gradient(1200px 900px at 100% 60%, rgba(205,220,255,.55), transparent 55%),
+      radial-gradient(1200px 900px at 0% 95%, rgba(230,215,255,.5), transparent 55%),
+      linear-gradient(180deg,#fffaf6 0%,#fff4f6 30%,#f3f0ff 70%,#eef3ff 100%) !important;
+  }
+
+  /* カード：Apple 風に純白＋極薄グレー＋クリスプシャドウ */
+  .sticker-card, .bento.glass, .glass {
+    background: rgba(255,255,255,.78) !important;
+    backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid rgba(0,0,0,.06) !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 10px 30px -20px rgba(0,0,0,.15) !important;
+    border-radius: 24px !important;
+  }
+  .sticker-card:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgba(0,0,0,.05), 0 20px 40px -20px rgba(0,0,0,.2) !important; }
+
+  /* チップ：シンプルな透明チップ */
+  .chip {
+    background: rgba(255,255,255,.7) !important;
+    border: 1px solid rgba(0,0,0,.06) !important;
+    color:#3a3344 !important;
+    font-weight: 500 !important;
+    box-shadow: none !important;
+  }
+
+  /* タイポ：硬派で細め */
+  body { color:#1d1d1f; font-weight: 400; letter-spacing: -.005em; }
+  h1, h2 { font-weight: 800 !important; }
+  .font-rock { font-weight: 800 !important; letter-spacing: -0.025em !important; }
+
+  /* ヒーロータイトルを Apple 的に整える */
+  #top h1 { font-size: clamp(2.5rem, 7vw, 5rem) !important; line-height: 1.08 !important; }
+
+  /* ボタン：Apple 的ブルー系 */
+  .btn-primary {
+    background: #1d1d1f !important; color:#fff !important;
+    padding: .85rem 1.5rem !important; font-weight: 500 !important;
+    box-shadow: none !important;
+    border-radius: 999px !important;
+    font-size: .95rem !important;
+  }
+  .btn-primary:hover { background:#3a3344 !important; transform: none !important; }
+  .btn-ghost {
+    background: rgba(255,255,255,.7) !important; color:#1d1d1f !important;
+    border: 1px solid rgba(0,0,0,.08) !important; padding: .85rem 1.5rem !important;
+    font-weight: 500 !important; font-size: .95rem !important;
+  }
+  .btn-ghost:hover { background:white !important; border-color:rgba(0,0,0,.18) !important; }
+
+  /* テキストグラデーションを Apple 的に */
+  .text-gradient {
+    background: linear-gradient(110deg,#ff6a88 0%,#ff9a7a 40%,#6b8eff 100%) !important;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: none !important;
+  }
+
+  /* スクロールで現れるアニメ以外は全停止（落ち着かせる） */
+  .animate-blob, .animate-float, .animate-marquee, .animate-spin-slow, .animate-spin-rev,
+  .animate-wiggle, .animate-bounce-slow, .animate-glitch, .animate-shine { animation: none !important; }
+  /* チップの点滅だけ残すのは冗長なので停止 */
+  .animate-pulse { animation: none !important; }
+
+  /* 装飾系を完全削除 */
+  .ribbon, .star-badge, .sparkle, .handwrite, .holo, .stroke-text, .mega-num,
+  .scribble, .underline-wave, .ani-border, .emo-tag, .tape, .font-hand, .font-mai { display: none !important; }
+  /* 手書きテキストを含む span を非表示にする影響はCSSのclass指定箇所のみ */
+
+  /* チップ内の装飾用 w-2 h-2 ドットは残すため個別扱い */
+  .chip .animate-pulse { animation: none !important; }
+
+  /* ナビ */
+  header { border-bottom: 1px solid rgba(0,0,0,.06) !important; }
+  .nav-blur { background: rgba(255,250,246,.72) !important; }
+
+  /* セクション余白を広め（Apple はゆったり） */
+  section { padding-top: clamp(5rem, 10vw, 9rem); padding-bottom: clamp(5rem, 10vw, 9rem); }
+
+  /* 大きな見出しをセンタリング可能に */
+  h2.font-black, h2.font-rock { font-weight: 800 !important; }
+
+  /* 色付きカードは彩度控えめ */
+  .bento-peach, .sticker-pink { background:#fff1f3 !important; color:#7a3d52 !important; }
+  .bento-sky, .sticker-blue { background:#eef3ff !important; color:#3d4d7a !important; }
+  .bento-lemon { background:#fff8e6 !important; color:#7a5a20 !important; }
+  .bento-mint { background:#edf8f2 !important; color:#2d6b46 !important; }
+  .bento-lilac { background:#f3edff !important; color:#55307a !important; }
+  .bento-rose, .sticker-acid { background:#fdf4f5 !important; color:#5a4a5a !important; }
+  .sticker-orange { background:#fff4eb !important; color:#7a4a30 !important; }
+
+  /* Tailwind の濃いグラデ系 bento をすべて薄める */
+  .bg-gradient-to-br.from-peach.to-rose-300,
+  .bg-gradient-to-br.from-sky2.to-indigo-300,
+  .bg-gradient-to-br.from-lemon.to-amber-300,
+  .bg-gradient-to-br.from-mint.to-emerald-300,
+  .bg-gradient-to-br.from-lilac.to-purple-400 {
+    background: rgba(255,255,255,.78) !important;
+    color:#1d1d1f !important;
+    border: 1px solid rgba(0,0,0,.06);
+    box-shadow: 0 10px 30px -20px rgba(0,0,0,.15);
+  }
+  .bg-gradient-to-br.from-peach.to-rose-300 * ,
+  .bg-gradient-to-br.from-sky2.to-indigo-300 * ,
+  .bg-gradient-to-br.from-lemon.to-amber-300 * ,
+  .bg-gradient-to-br.from-mint.to-emerald-300 * ,
+  .bg-gradient-to-br.from-lilac.to-purple-400 * { color:#1d1d1f !important; opacity: 1 !important; }
+
+  /* dropdown menu */
+  .dropdown-menu .glass { box-shadow: 0 12px 40px -10px rgba(0,0,0,.15) !important; }
+
+  /* ================================================= */
+  /* ===== PREMIUM AURORA — 明るく、リッチなグラデ背景 ===== */
+  /* ================================================= */
+  body {
+    font-family: 'Zen Maru Gothic','Zen Kaku Gothic New','Noto Sans JP',sans-serif !important;
+    background:
+      radial-gradient(ellipse 55% 45% at 8% 0%,    rgba(255,185,215,.75), transparent 62%),
+      radial-gradient(ellipse 50% 40% at 92% 3%,   rgba(255,220,180,.78), transparent 62%),
+      radial-gradient(ellipse 60% 50% at 100% 42%, rgba(190,215,255,.7),  transparent 62%),
+      radial-gradient(ellipse 55% 45% at 0% 55%,   rgba(220,215,255,.65), transparent 62%),
+      radial-gradient(ellipse 60% 50% at 100% 88%, rgba(255,210,230,.65), transparent 62%),
+      radial-gradient(ellipse 55% 45% at 0% 100%,  rgba(220,240,220,.55), transparent 62%),
+      linear-gradient(180deg, #fffbf8 0%, #fff4f7 22%, #fbf1fa 45%, #f3f3ff 70%, #ecf3ff 100%) !important;
+    background-attachment: fixed !important;
+  }
+
+  /* セクション用の薄い色ウォッシュ（前後つながる様に） */
+  section { background: transparent !important; }
+  #news    { background: linear-gradient(180deg, rgba(255,250,245,.6), rgba(255,240,245,.6)) !important; }
+  #about   { background: linear-gradient(180deg, rgba(250,245,255,.55), rgba(255,245,250,.4)) !important; }
+  #research{ background: linear-gradient(180deg, rgba(240,248,255,.55), rgba(250,245,255,.3)) !important; }
+  #works   { background: linear-gradient(180deg, rgba(255,245,240,.55), rgba(255,240,250,.5)) !important; }
+  #field   { background: linear-gradient(180deg, rgba(240,250,245,.55), rgba(245,240,255,.5)) !important; }
+  #learning{ background: linear-gradient(180deg, rgba(250,245,255,.5),  rgba(255,250,245,.4)) !important; }
+  #contact { background: linear-gradient(180deg, rgba(255,240,245,.55), rgba(240,245,255,.55)) !important; }
+
+  /* ヒーローにソフトなグロー */
+  #top { isolation: isolate; }
+  #top::after {
+    content:""; position:absolute; inset:-10% -5% 0; z-index:-1; pointer-events:none;
+    background: radial-gradient(700px 450px at 50% 45%, rgba(255,220,230,.5), transparent 65%);
+    filter: blur(20px);
+  }
+
+  /* ヒーロータイトル画像にドロップシャドウ */
+  #top img[alt*="外国にルーツ"] {
+    filter: drop-shadow(0 20px 40px rgba(255,160,190,.2)) drop-shadow(0 4px 10px rgba(180,140,200,.1));
+  }
+
+  /* カード：より洗練された Apple premium */
+  .sticker-card, .bento.glass, .glass {
+    background: rgba(255,255,255,.72) !important;
+    backdrop-filter: saturate(180%) blur(24px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(24px) !important;
+    border: 1px solid rgba(255,255,255,.85) !important;
+    box-shadow:
+      0 1px 2px rgba(80,60,90,.04),
+      0 2px 6px rgba(80,60,90,.04),
+      0 16px 40px -20px rgba(120,80,160,.18) !important;
+    border-radius: 28px !important;
+  }
+  .sticker-card:hover, .bento.glass:hover {
+    transform: translateY(-3px) !important;
+    box-shadow:
+      0 2px 4px rgba(80,60,90,.05),
+      0 30px 60px -24px rgba(120,80,160,.28) !important;
+  }
+
+  /* タイポ磨き */
+  h1, h2 {
+    font-weight: 900 !important;
+    letter-spacing: -0.035em !important;
+    line-height: 1.05 !important;
+  }
+  h3, h4 { font-weight: 800 !important; letter-spacing: -0.02em !important; }
+  body { font-weight: 500; color: #2a2434; }
+  p { color: #4a4458; }
+
+  /* ヒーローを大きく、広く */
+  #top { padding-top: 7rem !important; padding-bottom: 8rem !important; }
+  #top img[alt*="外国にルーツ"] { max-width: min(1000px, 90vw) !important; }
+
+  /* セクション見出し：大胆・中央寄せ感 */
+  section h2 { font-size: clamp(2.25rem, 5vw, 4rem) !important; }
+  section h2 + p, section .chip + h2 { margin-top: .75rem; }
+
+  /* チップの色をセクション別に（より繊細） */
+  .chip {
+    padding: .5rem 1rem !important;
+    font-size: .78rem !important;
+    letter-spacing: .05em !important;
+    background: rgba(255,255,255,.85) !important;
+    border: 1px solid rgba(0,0,0,.05) !important;
+    color: #5a4a6a !important;
+    backdrop-filter: blur(10px);
+  }
+
+  /* 小さいカラーパッチ（セクションヘッダーのドット） */
+  .chip .w-2.h-2.rounded-full { width: .45rem !important; height: .45rem !important; }
+
+  /* ボタン：よりクラフティング */
+  .btn-primary {
+    background: linear-gradient(180deg, #2a2434 0%, #1a1530 100%) !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    padding: 1rem 1.75rem !important;
+    border-radius: 999px !important;
+    font-size: .95rem !important;
+    letter-spacing: .02em;
+    box-shadow: 0 8px 24px -12px rgba(60,40,90,.35), inset 0 1px 0 rgba(255,255,255,.1) !important;
+    transition: all .3s cubic-bezier(.2,.8,.2,1);
+  }
+  .btn-primary:hover {
+    background: linear-gradient(180deg, #3a3344 0%, #2a2434 100%) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 14px 32px -10px rgba(60,40,90,.5), inset 0 1px 0 rgba(255,255,255,.1) !important;
+  }
+  .btn-ghost {
+    padding: 1rem 1.75rem !important;
+    font-weight: 600 !important;
+    background: rgba(255,255,255,.78) !important;
+    border: 1px solid rgba(0,0,0,.08) !important;
+    color: #2a2434 !important;
+    backdrop-filter: blur(10px);
+    transition: all .3s;
+  }
+  .btn-ghost:hover {
+    background: #fff !important;
+    border-color: #2a2434 !important;
+    transform: translateY(-1px);
+  }
+
+  /* text-gradient: 繊細なトーンに */
+  .text-gradient {
+    background: linear-gradient(110deg, #ff5c85 0%, #ff8a5c 30%, #ffb55c 55%, #6b8eff 100%) !important;
+    background-size: 200% auto !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+  }
+
+  /* hr-like divider between major sections */
+  section + section { border-top: 1px solid rgba(0,0,0,.04); }
+
+  /* 段落の行間を広く */
+  p { line-height: 1.9 !important; }
+  .prose-center p { line-height: 2 !important; }
+
+  /* 組織図のブロック柔らかく */
+  #organization .rounded-xl, #organization .rounded-2xl { border-radius: 18px !important; }
+
+  /* タグの色面を淡く */
+  .bg-peach\/20, .bg-peach\/30, .bg-peach\/40 { background: rgba(255,220,210,.55) !important; }
+  .bg-sky2\/20, .bg-sky2\/40, .bg-sky2\/50 { background: rgba(220,230,250,.55) !important; }
+  .bg-lemon\/30, .bg-lemon\/40, .bg-lemon\/50, .bg-lemon\/60 { background: rgba(255,245,210,.65) !important; }
+  .bg-mint\/40, .bg-mint\/50 { background: rgba(220,245,230,.6) !important; }
+  .bg-lilac\/40, .bg-lilac\/50 { background: rgba(235,225,250,.6) !important; }
+  .bg-white\/60, .bg-white\/70 { background: rgba(255,255,255,.75) !important; }
+  .bg-ink\/5 { background: rgba(30,20,50,.04) !important; }
+
+  /* スクロールリビールを少し丁寧に */
+  .scroll-reveal { transition: opacity 1.2s cubic-bezier(.2,.8,.2,1), transform 1.2s cubic-bezier(.2,.8,.2,1) !important; }
+
+  /* 基金セクションも調和させる */
+  section.bg-gradient-to-br {
+    background: linear-gradient(180deg, rgba(255,245,235,.5), rgba(250,245,255,.5)) !important;
+  }
+
+  /* 引用風 details */
+  details { transition: all .3s; }
+  details[open] { box-shadow: 0 8px 24px -12px rgba(0,0,0,.1); }
+
+  /* ナビ影を足す */
+  header.fixed { box-shadow: 0 1px 0 rgba(0,0,0,.03), 0 10px 30px -20px rgba(0,0,0,.08); }
+
+  /* リンクのトランジション */
+  a { transition: color .2s, opacity .2s; }
+
+  /* 文字選択色 */
+  ::selection { background: rgba(255,150,180,.3); color:#1a1530; }
+</style>
+</head>
+<body class="font-jp antialiased">
+
+<!-- ========== 合言葉ゲート ========== -->
+<div id="gate" style="position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:radial-gradient(1200px 800px at 20% 20%,rgba(255,205,220,.8),transparent 60%),radial-gradient(1200px 800px at 80% 80%,rgba(210,225,255,.8),transparent 60%),linear-gradient(180deg,#fffaf6,#f3f0ff);">
+  <div style="background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(24px);border:1px solid rgba(255,255,255,.9);border-radius:28px;box-shadow:0 20px 60px -20px rgba(120,80,160,.25);padding:3rem 2.5rem;max-width:420px;width:92%;text-align:center;font-family:'Zen Maru Gothic','Noto Sans JP',sans-serif;">
+    <img src="sozai/title.png" alt="阪大ふくふくセンター" style="max-width:240px;margin:0 auto 1.5rem;display:block;" />
+    <div style="font-size:.75rem;letter-spacing:.25em;color:#8a7d9a;margin-bottom:.5rem;">PRIVATE PREVIEW</div>
+    <h2 style="font-size:1.5rem;font-weight:900;color:#2a2434;margin-bottom:.5rem;letter-spacing:-.02em;">合言葉を入力してください</h2>
+    <p style="font-size:.85rem;color:#6a5d7a;margin-bottom:1.5rem;line-height:1.7;">このページはプレビュー用です。<br />合言葉をご存じの方のみご覧いただけます。</p>
+    <form id="gateForm" onsubmit="return checkPass(event)">
+      <input id="gatePass" type="password" placeholder="あいことば" autocomplete="off"
+        style="width:100%;padding:.9rem 1.2rem;border-radius:999px;border:1px solid rgba(0,0,0,.08);background:#fff;font-size:1rem;font-family:inherit;outline:none;text-align:center;box-shadow:inset 0 1px 3px rgba(0,0,0,.03);" />
+      <div id="gateErr" style="color:#c85870;font-size:.8rem;margin-top:.6rem;min-height:1rem;"></div>
+      <button type="submit" style="margin-top:.8rem;width:100%;padding:.9rem;border-radius:999px;border:none;background:linear-gradient(180deg,#2a2434,#1a1530);color:#fff;font-weight:600;font-size:.95rem;font-family:inherit;cursor:pointer;letter-spacing:.02em;box-shadow:0 8px 24px -12px rgba(60,40,90,.4);">
+        はいる
+      </button>
+    </form>
+  </div>
+</div>
+<script>
+  (function(){
+    // 既に入場済みなら閉じる
+    if (sessionStorage.getItem('fuku_ok') === '1') {
+      document.getElementById('gate').style.display = 'none';
+    } else {
+      document.documentElement.style.overflow = 'hidden';
+    }
+  })();
+  function checkPass(e){
+    e.preventDefault();
+    var v = document.getElementById('gatePass').value.trim();
+    if (v === 'aikotoba' || v === 'あいことば') {
+      sessionStorage.setItem('fuku_ok','1');
+      var g = document.getElementById('gate');
+      g.style.transition = 'opacity .4s'; g.style.opacity = '0';
+      setTimeout(function(){ g.style.display='none'; document.documentElement.style.overflow=''; }, 400);
+    } else {
+      document.getElementById('gateErr').textContent = '合言葉が違います。';
+      document.getElementById('gatePass').value = '';
+    }
+    return false;
+  }
+</script>
+
+
+<!-- ========== NAV ========== -->
+<header class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-white/40">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between gap-4">
+    <a href="#top" class="flex items-center group shrink-0">
+      <img src="sozai/title.png" alt="阪大ふくふくセンター" class="h-10 md:h-12 w-auto transition-transform group-hover:scale-105" />
+    </a>
+    <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+      <div class="dropdown relative">
+        <a href="#about" class="px-4 py-2 rounded-full hover:bg-white/80 transition flex items-center gap-1">
+          <span class="text-xs font-en text-rose-500">A)</span> 組織概要 <span class="text-xs">▾</span>
+        </a>
+        <div class="dropdown-menu absolute left-0 top-full pt-2 w-60">
+          <div class="glass rounded-2xl p-2 shadow-xl">
+            <a href="#greeting" class="block px-4 py-2 rounded-xl hover:bg-white/80 text-sm">センター長挨拶</a>
+            <a href="#introduction" class="block px-4 py-2 rounded-xl hover:bg-white/80 text-sm">組織紹介（設立の趣旨・理念）</a>
+            <a href="#organization" class="block px-4 py-2 rounded-xl hover:bg-white/80 text-sm">事業内容・組織図・構成員</a>
+            <a href="#access" class="block px-4 py-2 rounded-xl hover:bg-white/80 text-sm">アクセス</a>
+          </div>
+        </div>
+      </div>
+      <a href="#research" class="px-4 py-2 rounded-full hover:bg-white/80 transition"><span class="text-xs font-en text-sky-500">B)</span> 研究活動</a>
+      <a href="#works" class="px-4 py-2 rounded-full hover:bg-white/80 transition"><span class="text-xs font-en text-amber-500">C)</span> 活動報告</a>
+      <a href="#field" class="px-4 py-2 rounded-full hover:bg-white/80 transition"><span class="text-xs font-en text-emerald-500">D)</span> 活動の場</a>
+      <a href="#learning" class="px-4 py-2 rounded-full hover:bg-white/80 transition"><span class="text-xs font-en text-purple-500">E)</span> 学びの広場</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="#contact" class="btn-primary text-sm hidden md:inline-flex">お問い合わせ<span aria-hidden>→</span></a>
+      <button id="menuBtn" class="lg:hidden w-11 h-11 rounded-full glass flex flex-col items-center justify-center gap-1" aria-label="menu">
+        <span class="block w-5 h-0.5 bg-ink"></span><span class="block w-5 h-0.5 bg-ink"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-white/60 bg-white/95 backdrop-blur">
+    <div class="px-5 py-3 text-sm">
+      <details class="border-b border-ink/10">
+        <summary class="px-3 py-3 font-bold flex justify-between"><span>A) 組織概要</span><span>＋</span></summary>
+        <div class="pb-2">
+          <a href="#greeting" class="block px-6 py-2 text-ink/70">・センター長挨拶</a>
+          <a href="#introduction" class="block px-6 py-2 text-ink/70">・組織紹介</a>
+          <a href="#organization" class="block px-6 py-2 text-ink/70">・事業内容・組織図・構成員</a>
+          <a href="#access" class="block px-6 py-2 text-ink/70">・アクセス</a>
+        </div>
+      </details>
+      <a href="#research" class="block px-3 py-3 font-bold border-b border-ink/10">B) 研究活動</a>
+      <a href="#works" class="block px-3 py-3 font-bold border-b border-ink/10">C) 活動報告</a>
+      <a href="#field" class="block px-3 py-3 font-bold border-b border-ink/10">D) 活動の場</a>
+      <a href="#learning" class="block px-3 py-3 font-bold border-b border-ink/10">E) 学びの広場</a>
+      <a href="#contact" class="block text-center mt-3 btn-primary w-full !justify-center">お問い合わせ</a>
+    </div>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section id="top" class="relative grad-bg noise pt-24 md:pt-28 pb-20 md:pb-32 overflow-hidden spot-wrap">
+  <div class="pointer-events-none absolute -top-20 -left-20 w-[420px] h-[420px] rounded-full bg-gradient-to-br from-hotpink to-lemon opacity-60 blur-3xl"></div>
+  <div class="pointer-events-none absolute top-40 -right-24 w-[480px] h-[480px] rounded-full bg-gradient-to-br from-blueberry to-grape opacity-50 blur-3xl" style="animation-delay:-6s"></div>
+  <div class="pointer-events-none absolute bottom-0 left-1/3 w-[360px] h-[360px] rounded-full bg-gradient-to-br from-acid to-tangerine opacity-60 blur-3xl" style="animation-delay:-12s"></div>
+
+  <div class="max-w-7xl mx-auto px-5 md:px-8 relative">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-12 scroll-reveal text-center">
+        <h1 class="sr-only">外国にルーツを持つ子どもたちの学びを支える</h1>
+        <img src="sozai/外国にルーツを持つ子どもたちの学びを支えるcopy.jpg"
+             alt="外国にルーツを持つ子どもたちの学びを支える"
+             class="w-full max-w-4xl mx-auto h-auto mix-blend-multiply" />
+        <p class="mt-10 text-base md:text-lg leading-loose text-ink/70 max-w-2xl mx-auto">
+          大阪大学大学院人文学研究科附属<strong>複言語・複文化共存社会研究センター</strong>、<br class="hidden md:inline" />
+          通称「阪大ふくふくセンター」。2023年4月1日設立。
+        </p>
+        <div class="mt-10 flex flex-wrap gap-3 items-center justify-center">
+          <a href="#about" class="btn-primary">センターについて</a>
+          <a href="#field" class="btn-ghost">活動に参加する →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== NEWS / 新着情報 ========== -->
+<section id="news" class="relative py-24 md:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-14 scroll-reveal">
+      <div>
+        <div class="chip mb-4"><span class="w-2 h-2 rounded-full bg-peach"></span>NEWS / 新着情報</div>
+        <h2 class="font-black text-4xl md:text-6xl leading-tight">ニュース</h2>
+      </div>
+      <a href="#" class="btn-ghost">一覧はこちら →</a>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <article class="bento glass p-7 card-hover scroll-reveal">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="chip !bg-rose-100 !border-rose-200 !text-rose-700">全ての方</span>
+          <time class="text-xs text-ink/50 font-en">2025.12.1</time>
+        </div>
+        <h3 class="font-bold text-lg leading-snug">第3回ことばと出会うシンポジウム「あなたを彩ることばはいくつ？～"ふくふく"を生きるということ～」を開催しました。</h3>
+      </article>
+      <article class="bento glass p-7 card-hover scroll-reveal">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="chip !bg-sky-100 !border-sky-200 !text-sky-700">全ての方</span>
+          <time class="text-xs text-ink/50 font-en">2025.11.6</time>
+        </div>
+        <h3 class="font-bold text-lg leading-snug">関西大倉高等学校で出前授業をおこないました</h3>
+      </article>
+      <article class="bento glass p-7 card-hover scroll-reveal">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="chip !bg-amber-100 !border-amber-200 !text-amber-700">全ての方</span>
+          <time class="text-xs text-ink/50 font-en">2025.10.24</time>
+        </div>
+        <h3 class="font-bold text-lg leading-snug">大阪大学共創DAY@EXPOCITY2025に協力しました！</h3>
+      </article>
+      <article class="bento bg-gradient-to-br from-ink to-purple-900 text-white p-7 card-hover scroll-reveal md:col-span-2">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="chip !bg-white/20 !border-white/30 !text-white">全ての方</span>
+          <time class="text-xs opacity-60 font-en">2025.9.26</time>
+        </div>
+        <h3 class="font-bold text-2xl leading-snug">【阪大ふくふくセンター】特任講師（常勤）の公募（応募期限：10月8日必着）</h3>
+      </article>
+      <article class="bento glass p-7 card-hover scroll-reveal">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="chip !bg-emerald-100 !border-emerald-200 !text-emerald-700">全ての方</span>
+          <time class="text-xs text-ink/50 font-en">2025.9.1</time>
+        </div>
+        <h3 class="font-bold text-lg leading-snug">2025年度夏期メディエーター登録説明会を実施しました！</h3>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== A) 組織概要 ========== -->
+<section id="about" class="relative py-24 md:py-32 grad-bg noise overflow-hidden">
+  <div class="pointer-events-none absolute top-10 right-10 w-72 h-72 rounded-full bg-gradient-to-br from-lilac to-peach opacity-40 blur-3xl"></div>
+
+  <div class="max-w-7xl mx-auto px-5 md:px-8 relative">
+    <div class="max-w-3xl mb-16 scroll-reveal">
+      <div class="chip mb-4"><span class="w-2 h-2 rounded-full bg-lilac"></span>A) ABOUT / 組織概要</div>
+      <h2 class="font-black text-4xl md:text-6xl leading-tight">阪大ふくふく<br />センターとは</h2>
+    </div>
+
+    <!-- section tabs -->
+    <div class="flex flex-wrap gap-2 mb-10 scroll-reveal">
+      <a href="#greeting" class="chip !bg-white !border-ink/20 hover:!border-ink">① センター長挨拶</a>
+      <a href="#introduction" class="chip !bg-white !border-ink/20 hover:!border-ink">② 組織紹介</a>
+      <a href="#organization" class="chip !bg-white !border-ink/20 hover:!border-ink">③ 事業内容・組織図・構成員</a>
+      <a href="#access" class="chip !bg-white !border-ink/20 hover:!border-ink">④ アクセス</a>
+    </div>
+
+    <!-- ① センター長挨拶 -->
+    <div id="greeting" class="bento glass p-8 md:p-14 mb-6 card-hover scroll-reveal">
+      <div class="grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-4">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="chip !bg-ink !text-white !border-ink">01</span>
+            <span class="text-xs font-en tracking-widest text-ink/50">GREETING</span>
+          </div>
+          <h3 class="font-black text-3xl md:text-4xl mb-6">ご挨拶</h3>
+          <div class="flex items-center gap-4">
+            <img src="sozai/pht-shimizu.png" alt="清水 政明" class="w-16 h-16 rounded-full object-cover border border-white/80 shadow-md" />
+            <div>
+              <div class="font-bold">清水 政明</div>
+              <div class="text-xs text-ink/60 leading-relaxed">センター長<br />大阪大学大学院人文学研究科<br />外国学専攻　教授</div>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-8 prose-center text-ink/80 text-[15px]">
+          <p>大阪大学大学院人文学研究科附属複言語・複文化共存社会研究センター（以下、阪大ふくふくセンター）は、「外国にルーツを持つ子どもたち」への支援活動を中心に行うため、2023年4月1日に設立されました。設立以来、個人・団体を問わず、多くの方々にご支援、ご協力いただいています。</p>
+          <p>2024年6月末時点で、在留外国人数は約360万人となりました。それに伴い「外国にルーツを持つ子どもたち」の数も増え続けています。それは、日本社会が多言語・多文化との共存を意識せざるを得ない状況となっていることを物語っており、私たち阪大ふくふくセンターの存在がますます注目されている所以でもあります。その活動をより充実したものにするためには、これまで行ってきたことを振り返り、実践の中で培ったノーハウを整理し、学術的観点からの知見も含めつつ、今後の活動を行っていくことが重要だと思います。その際には、25地域の言語と文化を教育・研究する外国語学部・人文学研究科外国学専攻/日本学専攻応用日本学コースの知見を最大限に活かしていくことが一つの鍵となるでしょう。</p>
+          <p>ご協力いただいているステークホルダーの方々との連携をより強化しながら、「外国にルーツを持つ子どもたち」が自らのルーツに誇りを抱きつつ日本社会で生活できるよう、また、日本に住む誰もが「複言語・複文化」を実践できるよう、その環境づくりに貢献したいと思います。</p>
+          <p>阪大ふくふくセンターの活動に対して、引き続き多くの方からのご理解、ご協力、ご支援を賜りたく、よろしくお願いいたします。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ② 組織紹介（設立の趣旨・理念） -->
+    <div id="introduction" class="grid lg:grid-cols-12 gap-6 mb-6">
+      <div class="lg:col-span-7 bento glass p-8 md:p-12 card-hover scroll-reveal">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="chip !bg-ink !text-white !border-ink">02</span>
+          <span class="text-xs font-en tracking-widest text-ink/50">INTRODUCTION</span>
+        </div>
+        <h3 class="font-black text-3xl md:text-4xl mb-6">組織紹介<span class="text-ink/40 text-xl ml-2 font-normal">／ 設立の趣旨・理念</span></h3>
+        <div class="prose-center text-ink/80 text-[15px]">
+          <p>日本で暮らす外国出身者の増加に伴い、言語や文化的背景が多様な子どもたちも地域や学校で日常生活を送っており、制度面の壁、言語や文化の喪失、アイデンティティーの揺らぎといった様々な課題が生じています。25の専攻語を有し、地域研究・語圏学を専門とする教員や学生が在籍している大阪大学箕面キャンパスでは、大阪外国語大学時代から、教員・学生・卒業生らが、そういった子どもたちに関わる学校生活における支援活動や、司法通訳・翻訳、医療通訳といったコミュニティー通訳、国内外の移民に関する教育・研究に携わってきました。教職員や学生たちが個別に、大阪府内をはじめとする近畿一円から、子どもたちの教育に関する相談や依頼を受けてきましたが、組織的な対応や、情報共有、人材育成、情報発信等をおこなうことの重要性に鑑み、2023年4月、複言語・複文化共存社会研究センターを設立いたしました。</p>
+          <p>複言語・複文化共存社会研究センターは、多様な文化的・言語的背景を持つ子どもたちが、自分の言語や背景を活用し、ルーツに誇りを持って成長できるように、地域社会、地方自治体、学校の取り組みに対するサポートを通して、言語間や文化間、人と人との仲介者としての役割を果たし、社会課題の解決を図ります。</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 bento bg-gradient-to-br from-ink to-indigo-900 text-white p-8 md:p-12 card-hover scroll-reveal flex flex-col justify-between">
+        <div>
+          <div class="text-xs font-en tracking-widest opacity-60">ESTABLISHED</div>
+          <div class="font-display text-7xl md:text-8xl leading-none mt-2">2023</div>
+          <div class="text-sm opacity-80 mt-1">April 1st — 設立</div>
+        </div>
+        <div class="mt-10">
+          <div class="text-xs font-en tracking-widest opacity-60 mb-3">目的</div>
+          <ul class="space-y-3 text-sm leading-relaxed">
+            <li class="flex gap-3"><span class="font-display opacity-60">01</span><span>日本社会における社会的不平等、異文化間衝突、言語間格差といった社会課題の改善</span></li>
+            <li class="flex gap-3"><span class="font-display opacity-60">02</span><span>異文化間の対話と相互理解を深める架け橋となる学生の育成</span></li>
+            <li class="flex gap-3"><span class="font-display opacity-60">03</span><span>学生、地域の人々、関係団体等の各現場が協働して課題解決にとりくむ環境の醸成</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ③ 事業内容・組織図・構成員 -->
+    <div id="organization" class="bento glass p-8 md:p-14 mb-6 card-hover scroll-reveal">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="chip !bg-ink !text-white !border-ink">03</span>
+        <span class="text-xs font-en tracking-widest text-ink/50">ORGANIZATION</span>
+      </div>
+      <h3 class="font-black text-3xl md:text-4xl mb-10">事業内容・組織図・構成員</h3>
+
+      <!-- 事業内容 -->
+      <h4 class="font-bold text-xl mb-5">事業内容</h4>
+      <div class="grid md:grid-cols-3 gap-4 mb-12">
+        <div class="bento p-6 bg-gradient-to-br from-peach to-rose-300 text-white">
+          <div class="text-4xl font-display mb-3">①</div>
+          <div class="font-bold mb-2">支援活動の推進</div>
+          <p class="text-xs leading-relaxed opacity-95">箕面キャンパスにおける、外国にルーツを持つ子どもの支援や教育の相談窓口を一元化し、地域社会や地方自治体、各種団体、教育機関等にとっての利便性を高めます。活動に関心を持つ学生・卒業生・教職員を「メディエーター」として登録し、必要とされる支援内容等とのマッチングを経て各現場へ紹介するとともに、現場の実情を把握します。</p>
+        </div>
+        <div class="bento p-6 bg-gradient-to-br from-sky2 to-indigo-300 text-white">
+          <div class="text-4xl font-display mb-3">②</div>
+          <div class="font-bold mb-2">研究・教育活動の推進</div>
+          <p class="text-xs leading-relaxed opacity-95">メディエーターに対する登録説明会やフォローアップを実施し、言語や文化が異なる人々の間を仲介する力を育てます。活動の成果や課題を取りまとめ、講演会や研究会を開催します。国内外の研究・教育組織との情報共有や共同研究を進め、課題の解決を図ります。</p>
+        </div>
+        <div class="bento p-6 bg-gradient-to-br from-lilac to-purple-400 text-white">
+          <div class="text-4xl font-display mb-3">③</div>
+          <div class="font-bold mb-2">連携体制の構築と提案・提言</div>
+          <p class="text-xs leading-relaxed opacity-95">自治体、各団体、教育機関等との協力体制を構築するとともに、大阪大学内の関係機関との連携・協力によるデータ収集や課題の把握を担います。自治体や教育機関等に対し、学術的見地に立って、あるべき複言語・複文化共存社会に向けた教育の在り方や行政の進め方を提言し、学区や自治体の枠組みを超えた仕組み作り等に貢献します。</p>
+        </div>
+      </div>
+
+      <!-- 組織図 -->
+      <h4 class="font-bold text-xl mb-2">組織図</h4>
+      <p class="text-xs text-ink/60 mb-5">主に人文学研究科外国学専攻・日本学専攻応用日本学コースの教職員で構成される運営委員会が業務を企画・運営・推進します。支援部門、教育・研究部門、渉外部門が実務を担当し、支援部門は業務内容①、教育・研究部門は業務内容②、渉外部門は業務内容③を主に担います。箕面キャンパスを拠点とする、日本語日本文化教育センター、国際教育交流センター、外国学図書館とも連携しています。（2025年4月1日現在）</p>
+      <div class="bg-white/60 rounded-2xl p-6 mb-12">
+        <div class="text-center py-3 rounded-xl bg-ink text-white font-bold mb-4">運営委員会</div>
+        <div class="grid grid-cols-3 gap-3 mb-4">
+          <div class="text-center py-4 rounded-xl bg-peach/40 font-bold text-sm">支援部門<div class="text-xs font-normal opacity-70 mt-1">業務内容 ①</div></div>
+          <div class="text-center py-4 rounded-xl bg-sky2/50 font-bold text-sm">教育・研究部門<div class="text-xs font-normal opacity-70 mt-1">業務内容 ②</div></div>
+          <div class="text-center py-4 rounded-xl bg-lemon/60 font-bold text-sm">渉外部門<div class="text-xs font-normal opacity-70 mt-1">業務内容 ③</div></div>
+        </div>
+        <div class="text-center text-xs text-ink/60 pt-3 border-t border-ink/10">連携：日本語日本文化教育センター／国際教育交流センター／外国学図書館</div>
+      </div>
+
+      <!-- 構成員 -->
+      <h4 class="font-bold text-xl mb-2">運営委員会・各部門委員</h4>
+      <p class="text-xs text-ink/60 mb-5">（委員の所属はすべて大阪大学大学院人文学研究科）</p>
+
+      <div class="mb-6">
+        <div class="text-sm font-bold mb-3 text-ink/70">運営委員会</div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
+          <div class="p-4 bg-white/70 rounded-2xl"><div class="text-xs text-rose-500 font-bold mb-1">センター長</div><div class="font-bold">清水 政明</div><div class="text-xs text-ink/60 mt-1">外国学専攻 教授 / ベトナム語</div></div>
+          <div class="p-4 bg-white/70 rounded-2xl"><div class="text-xs text-ink/50 mb-1">委員／支援部門長、渉外部門長</div><div class="font-bold">村上 忠良</div><div class="text-xs text-ink/60 mt-1">外国学専攻 教授 / タイ語</div></div>
+          <div class="p-4 bg-white/70 rounded-2xl"><div class="text-xs text-ink/50 mb-1">委員／教育・研究部門長</div><div class="font-bold">櫻井 千穂</div><div class="text-xs text-ink/60 mt-1">日本学専攻 准教授 / 日本語</div></div>
+          <div class="p-4 bg-white/70 rounded-2xl"><div class="text-xs text-ink/50 mb-1">委員</div><div class="font-bold">菅原 由美</div><div class="text-xs text-ink/60 mt-1">外国学専攻 教授 / インドネシア語</div></div>
+          <div class="p-4 bg-white/70 rounded-2xl"><div class="text-xs text-ink/50 mb-1">委員</div><div class="font-bold">宮原 曉</div><div class="text-xs text-ink/60 mt-1">外国学専攻 教授 / フィリピン語</div></div>
+          <div class="p-4 bg-white/70 rounded-2xl"><div class="text-xs text-ink/50 mb-1">委員</div><div class="font-bold">矢元 貴美</div><div class="text-xs text-ink/60 mt-1">外国学専攻 講師 / フィリピン語</div></div>
+          <div class="p-4 bg-white/70 rounded-2xl"><div class="text-xs text-ink/50 mb-1">委員</div><div class="font-bold">近藤 美佳</div><div class="text-xs text-ink/60 mt-1">外国学専攻 講師 / ベトナム語</div></div>
+          <div class="p-4 bg-white/70 rounded-2xl"><div class="text-xs text-ink/50 mb-1">委員</div><div class="font-bold">山根 聡</div><div class="text-xs text-ink/60 mt-1">外国学専攻 教授 / ウルドゥー語</div></div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-6">
+        <div>
+          <div class="text-sm font-bold mb-3 text-ink/70">支援部門</div>
+          <div class="space-y-2 text-sm">
+            <div class="p-3 bg-peach/20 rounded-xl"><span class="text-xs text-rose-500">部門長</span> <strong>村上 忠良</strong><div class="text-xs text-ink/60">外国学専攻 教授 / タイ語</div></div>
+            <div class="p-3 bg-peach/20 rounded-xl"><strong>酒井 裕美</strong><div class="text-xs text-ink/60">外国学専攻 教授 / 朝鮮語</div></div>
+            <div class="p-3 bg-peach/20 rounded-xl"><strong>ラッタナセリーウォン センティアン</strong><div class="text-xs text-ink/60">外国学専攻 助教 / タイ語</div></div>
+            <div class="p-3 bg-peach/20 rounded-xl"><strong>近藤 美佳</strong><div class="text-xs text-ink/60">外国学専攻 講師 / ベトナム語</div></div>
+            <div class="p-3 bg-peach/20 rounded-xl"><strong>大塚 行誠</strong><div class="text-xs text-ink/60">外国学専攻 准教授 / ビルマ語</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="text-sm font-bold mb-3 text-ink/70">教育・研究部門</div>
+          <div class="space-y-2 text-sm">
+            <div class="p-3 bg-sky2/20 rounded-xl"><span class="text-xs text-sky-600">部門長</span> <strong>櫻井 千穂</strong><div class="text-xs text-ink/60">日本学専攻 准教授 / 日本語</div></div>
+            <div class="p-3 bg-sky2/20 rounded-xl"><strong>林 初梅</strong><div class="text-xs text-ink/60">外国学専攻 教授 / 中国語</div></div>
+            <div class="p-3 bg-sky2/20 rounded-xl"><strong>矢元 貴美</strong><div class="text-xs text-ink/60">外国学専攻 講師 / フィリピン語</div></div>
+            <div class="p-3 bg-sky2/20 rounded-xl"><strong>横井 幸子</strong><div class="text-xs text-ink/60">外国学専攻 准教授 / ロシア語</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="text-sm font-bold mb-3 text-ink/70">渉外部門</div>
+          <div class="space-y-2 text-sm">
+            <div class="p-3 bg-lemon/30 rounded-xl"><span class="text-xs text-amber-600">部門長</span> <strong>村上 忠良</strong><div class="text-xs text-ink/60">外国学専攻 教授 / タイ語</div></div>
+            <div class="p-3 bg-lemon/30 rounded-xl"><strong>ジェイ ベヘナム</strong><div class="text-xs text-ink/60">外国学専攻 准教授 / ペルシア語</div></div>
+            <div class="p-3 bg-lemon/30 rounded-xl"><strong>江口 清子</strong><div class="text-xs text-ink/60">外国学専攻 講師 / ハンガリー語</div></div>
+            <div class="p-3 bg-lemon/30 rounded-xl"><strong>鳥越 慎太郎</strong><div class="text-xs text-ink/60">外国学専攻 助教 / ポルトガル語</div></div>
+            <div class="p-3 bg-lemon/30 rounded-xl"><strong>宮本 隆史</strong><div class="text-xs text-ink/60">外国学専攻 准教授 / ウルドゥー語</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="text-sm font-bold mb-3 text-ink/70">教務補佐員</div>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-4 py-2 bg-white/70 rounded-full text-sm font-bold">田村 美香</span>
+          <span class="px-4 py-2 bg-white/70 rounded-full text-sm font-bold">津田 茉莉</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ④ アクセス -->
+    <div id="access" class="grid lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-7 bento overflow-hidden relative h-64 md:h-full min-h-[320px] card-hover scroll-reveal">
+        <img src="sozai/map.png" alt="アクセスマップ" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/20 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6 md:p-10 text-white">
+          <div class="text-xs font-en tracking-widest opacity-80">ACCESS</div>
+          <div class="font-display text-3xl md:text-5xl">箕面キャンパス</div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 bento glass p-8 md:p-10 card-hover scroll-reveal">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="chip !bg-ink !text-white !border-ink">04</span>
+          <span class="text-xs font-en tracking-widest text-ink/50">ACCESS</span>
+        </div>
+        <h3 class="font-black text-2xl md:text-3xl mb-6">アクセス</h3>
+        <dl class="space-y-5 text-sm">
+          <div><dt class="text-xs text-ink/50 font-bold mb-1">名称</dt>
+            <dd>大阪大学大学院 人文学研究科 附属<br />複言語・複文化共存社会研究センター<br /><span class="text-xs text-ink/60 font-en">Diversity and Community Engagement Research Center</span></dd></div>
+          <div><dt class="text-xs text-ink/50 font-bold mb-1">住所</dt>
+            <dd>〒562-8678<br />大阪府箕面市船場東3-5-10<br />大阪大学 箕面キャンパス内</dd></div>
+          <div><dt class="text-xs text-ink/50 font-bold mb-1">TEL/FAX</dt>
+            <dd>072-730-5094<br /><span class="text-xs text-ink/60">※勤務日不定期のため、不在の場合は、お問合せフォームからご連絡ください。</span></dd></div>
+          <div><dt class="text-xs text-ink/50 font-bold mb-1">MAIL</dt>
+            <dd class="font-mono">contact(at)derc.hmt.osaka-u.ac.jp<br /><span class="text-xs text-ink/60 font-jp">※(at)は@に置き換えてください。</span></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== B) 研究活動（準備中） ========== -->
+<section id="research" class="relative py-24 md:py-32 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 relative">
+    <div class="absolute top-0 right-0 mega-num stroke-text opacity-20 pointer-events-none select-none">B</div>
+    <div class="mb-10 scroll-reveal max-w-3xl relative">
+      <div class="chip sticker-blue font-bold mb-4">B) RESEARCH / 研究活動</div>
+      <h2 class="font-rock text-4xl md:text-6xl leading-tight">研究活動</h2>
+    </div>
+    <div class="max-w-3xl mx-auto scroll-reveal sticker-card p-12 md:p-20 text-center">
+      <div class="inline-block text-xs tracking-[.25em] text-ink/50 font-medium mb-4">COMING SOON</div>
+      <h3 class="font-rock text-3xl md:text-4xl mb-4">準備中</h3>
+      <p class="text-ink/65 leading-loose max-w-xl mx-auto">阪大ふくふくセンターの研究成果や進行中のプロジェクトについて、近日公開予定です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== C) 活動報告 ========== -->
+<section id="works" class="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-white via-rose-50 to-amber-50">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 relative">
+    <div class="absolute top-0 right-0 mega-num stroke-text opacity-20 pointer-events-none select-none">C</div>
+    <div class="mb-14 scroll-reveal max-w-3xl relative">
+      <div class="chip sticker-orange font-bold mb-4">C) WORKS / 活動報告</div>
+      <h2 class="font-rock text-4xl md:text-6xl leading-tight">活動報告</h2>
+    </div>
+
+    <!-- 活動事例 -->
+    <div class="mb-16">
+      <div class="flex items-center gap-3 mb-8 scroll-reveal">
+        <span class="font-chunky text-4xl md:text-5xl">01</span>
+        <div>
+          <h3 class="font-rock text-2xl md:text-3xl">活動事例</h3>
+          <p class="text-sm text-ink/70">阪大ふくふくセンター／メディエーターは以下のような活動をおこないます。</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="sticker-card rounded-3xl p-7 card-hover scroll-reveal">
+          <img src="sozai/school.png" alt="" class="w-16 h-16 object-contain mb-4" />
+          <h4 class="font-black text-lg mb-3">教育相談</h4>
+          <p class="text-sm text-ink/80 leading-relaxed">教職員、教育委員会、関係団体からの外国にルーツを持つ子どもや保護者の対応に関する相談に対応する。</p>
+        </div>
+        <div class="sticker-card rounded-3xl p-7 card-hover scroll-reveal" style="background:#FFE98A;">
+          <img src="sozai/toukou.png" alt="" class="w-16 h-16 object-contain mb-4" style="animation-delay:-1s" />
+          <h4 class="font-black text-lg mb-3">教科学習支援</h4>
+          <ul class="text-sm text-ink/80 leading-relaxed space-y-1 list-disc list-inside">
+            <li>正課の授業中に、子どもと一緒に教室に入り、学習を補助する。</li>
+            <li>正課の授業中に別室で、または、放課後や課外で学習を補助する。</li>
+            <li>地域の学習教室で学習を補助する。</li>
+          </ul>
+        </div>
+        <div class="sticker-card rounded-3xl p-7 card-hover scroll-reveal" style="background:#B8F2D8;">
+          <img src="sozai/gaikokuni.png" alt="" class="w-16 h-16 object-contain mb-4" style="animation-delay:-2s" />
+          <h4 class="font-black text-lg mb-3">母語・継承語学習支援</h4>
+          <ul class="text-sm text-ink/80 leading-relaxed space-y-1 list-disc list-inside">
+            <li>子どもたちや保護者がルーツを持つ国や地域に関する学習の企画や補助を行う。</li>
+            <li>子どもたち同士でのピアシェアリングを手伝う。</li>
+            <li>スピーチ大会の原稿作成や発表練習を手伝う。</li>
+          </ul>
+        </div>
+        <div class="sticker-card rounded-3xl p-7 card-hover scroll-reveal" style="background:#A8D8FF;">
+          <img src="sozai/kyosyu.png" alt="" class="w-16 h-16 object-contain mb-4" style="animation-delay:-3s" />
+          <h4 class="font-black text-lg mb-3">異文化理解・多文化共生・国際理解教育</h4>
+          <p class="text-sm text-ink/80 leading-relaxed">正課の授業（総合的な学習の時間、総合的な探究の時間、社会科、家庭科、外国語科等）や課外活動、地域（自治会、子ども会、婦人会、青年会等）のイベント等における学習の企画や学習の補助を行う。</p>
+        </div>
+        <div class="sticker-card rounded-3xl p-7 card-hover scroll-reveal" style="background:#D8B8FF;">
+          <img src="sozai/kouen.png" alt="" class="w-16 h-16 object-contain mb-4" style="animation-delay:-4s" />
+          <h4 class="font-black text-lg mb-3">通訳</h4>
+          <p class="text-sm text-ink/80 leading-relaxed">説明会（学校説明会、入学者説明会等）、保護者対応（保護者への連絡、保護者懇談、就学手続き等）、家庭訪問、学校行事（入学式、授業参観、PTA活動等）、入学・編入学・転入学相談等で通訳補助を行う。</p>
+        </div>
+        <div class="sticker-card rounded-3xl p-7 card-hover scroll-reveal" style="background:#FFB8A8;">
+          <img src="sozai/shokujikai.png" alt="" class="w-16 h-16 object-contain mb-4" style="animation-delay:-5s" />
+          <h4 class="font-black text-lg mb-3">翻訳</h4>
+          <p class="text-sm text-ink/80 leading-relaxed">国・自治体からの案内文書（就学援助、就学支援金、奨学金等）、ガイドブック（学校制度、進路等）、学校からの案内文書（定期健康診断、学校行事等）、学習教材（教科書、プリント、試験問題等）等の翻訳補助を行う。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 学生の体験談 -->
+    <div>
+      <div class="flex items-center gap-3 mb-8 scroll-reveal">
+        <span class="font-chunky text-4xl md:text-5xl">02</span>
+        <div>
+          <h3 class="font-rock text-2xl md:text-3xl">学生の体験談</h3>
+          <p class="text-sm text-ink/70">現場で活動した学生・卒業生のリアルな声。</p>
+        </div>
+      </div>
+    <div class="space-y-6">
+      <article class="bento card-hover scroll-reveal bg-white overflow-hidden">
+        <div class="grid md:grid-cols-12">
+          <div class="md:col-span-4 bg-gradient-to-br from-peach to-lemon flex items-center justify-center p-10 min-h-[240px]">
+            <img src="sozai/akusyu.png" alt="" class="w-40 h-40 object-contain sticker" />
+          </div>
+          <div class="md:col-span-8 p-8 md:p-12">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="chip !bg-rose-100 !border-rose-200 !text-rose-700">Case 01</span>
+              <span class="text-xs font-en text-ink/50 tracking-widest">STUDENT REPORT</span>
+            </div>
+            <div class="prose-center text-ink/80 text-[15px]">
+              <p>大阪府内某市の教育委員会からの依頼で、外国にルーツを持つ子どもたちが公教育で学ぶための支援を行っていました。大好きなフィリピン人が日本で困っていて、それを私が少しでも救える立場にあることを知り、彼らを全力でサポートしたいという思いからこの活動を始めました。私はこの活動を2年間ほど続け、関わらせてもらった学校は計4校、受け持った児童・生徒は計10名です。</p>
+              <p>活動の中で、学校ごとに求める役割が違い、それに順応しながら授業を作っていくことにやりがいを感じました。今回は2校の授業の様子について紹介します。</p>
+              <p>1校目は「フィリピン語を話せるようになること」と「フィリピン人のご家族とコミュニケーションをとれるようになること」を求めている学校でした。私は、フィリピン語の挨拶や簡単な単語を読み書きしたり、ロールプレイしたりする授業を設計しました。最初の頃は彼らがフィリピンに興味を持っていないことに課題を感じていました。そこで担任や同じ活動をしている先輩の先生らにアドバイスを頂き、授業を大幅に変化させました。具体的には、授業だけで完結させるのではなく、フィリピン人の母親とコミュニケーションをとれる宿題を出したり、口・頭を使った授業を増やしたりしました。すると、少しずつ「おはようございます。」を「Magandang hapon po!（フィリピン語で「おはようございます」）」と言ってくれるようになることが増えました。</p>
+              <p>2校目は、「日本語の授業についていけるようになること」と「日本語でコミュニケーションをとれるようになること」を求めていました。そのため、授業中に隣の席に座って担任の先生の説明をフィリピン語に訳したり、簡単な日本語に説明し直したりすることが私の役割でした。その学校に小学1年生で繰り上がりの計算ができない子がいました。そこでその子が何を理解出来ていないのか考え、粘り強くその子と向き合っていくと、日本語がよく分からず数の概念が理解出来ていないことに気づきました。そこで手の指を使って計算することを教えました。その方法で計算の練習を進めていくうちに、やがて手を使わなくてもうまく計算できるようになりました。</p>
+              <p>社会人になった今、人をサポートする、という経験が役に立っていることを実感しています。サポートとは、その子どもの背景を知り、それに適した環境を作ってあげるということで、活動への参加を通じて実践的に人の立場に立って考えるという視点を得ることができました。私にとってこの活動は、フィリピン文化を学ぶ機会を得られるだけでなく、子どもが困っていることを一緒に解決することができる貴重な時間でした。この活動がより広まって、より多くの子どもたちが楽しいと感じる社会になることを願っています。</p>
+            </div>
+            <div class="mt-6 pt-6 border-t border-ink/10 text-sm text-ink/70">大阪大学外国語学部フィリピン語専攻卒業生　<strong>佐藤 南海</strong></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bento card-hover scroll-reveal bg-white overflow-hidden">
+        <div class="grid md:grid-cols-12">
+          <div class="md:col-span-4 bg-gradient-to-br from-sky2 to-lilac flex items-center justify-center p-10 min-h-[240px] md:order-last">
+            <img src="sozai/fugu_child_2.png" alt="" class="w-40 h-40 object-contain sticker" style="animation-delay:-3s" />
+          </div>
+          <div class="md:col-span-8 p-8 md:p-12">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="chip !bg-sky-100 !border-sky-200 !text-sky-700">Case 02</span>
+              <span class="text-xs font-en text-ink/50 tracking-widest">STUDENT REPORT</span>
+            </div>
+            <div class="prose-center text-ink/80 text-[15px]">
+              <p>阪大ふくふくセンターを通して参加する活動は、子どもたちに何かを教えるのではなく、学生自身が子どもの存在に励まされながら「学び直す」活動になると考えます。</p>
+              <p>私は2021〜2022年度の2年間、大阪府内某市の小学校２校において、外国にルーツがある子どもたち（CLD児）が自分のルーツの国の言語・文化について学ぶためのクラスで講師を務めました。私は学部時代にベトナム語を学んだご縁で、ベトナムルーツの子どもたちを担当しました。</p>
+              <p>白状いたしますと、私は学部時代よりも活動に参加した2年間の方が必死で勉強しました。担当している子どもに寄り添うためには、受け身の知識だけでは立ち行かなくなったからです。他でもないその子が知りたがっている言語・文化的知識を集めるだけでなく、多様なルーツを持つ子どもたちを取り巻く困難について理解を深めることも必要でした。</p>
+              <p>このような「学び直し」を繰り返しつつ、クラスでは大きく三つのことを心がけました。一つ目は、子どもが今持っているベトナム語の力を最大限引き出せるように学習計画や教材作ることです。そのために、子どもが家族と何語/何方言で話しているのか、ベトナム語の話す/聞く/書く/読む力がそれぞれどの程度あるのか、保護者にベトナム語の教育方針があるか等の情報収集から始め、子どもが家庭で日常的に触れているベトナム語からワンステップだけ上の学びができるよう意識しました。</p>
+              <p>二つ目は、子どもから「ベトナム語はお家だけ。日本の学校は日本語しかダメ」というプレッシャーを取り除くことです。場所が変わっても、ルーツの言語や文化は常に子どもの一部です。自身の言語的・文化的背景を丸ごと受け入れられる安心感と、持ち得る全てのことばを使って学ぶことができる環境は、本来当然補償されるべきと考えます。このクラスは短時間で少規模ですが、それを実現した空間になるよう努めました。</p>
+              <p>三つ目は、小学校の先生方と密に連携してクラスを作ることです。私の担当した学校では、学習テーマは先生が決めてくださり、そこから子どものレベルに合わせた学習目標を相談して決めました。また、このクラスが関係者だけの閉ざされた活動にならないように、子どもにとって普段の学校生活と地続きになるように、学習内容は在籍学級でも紹介してもらうことを想定して検討しました。</p>
+              <p>活動はいつも試行錯誤ばかりでしたが、子どもと一緒に過ごした時間がとにかく楽しくて、大好きでした。同じように活動に参加する学生が増え、喜びの輪が広がっていくと私も嬉しいです。</p>
+            </div>
+            <div class="mt-6 pt-6 border-t border-ink/10 text-sm text-ink/70">大阪大学大学院人文学研究科日本学専攻　<strong>田中 倫</strong></div>
+          </div>
+        </div>
+      </article>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== D) 活動の場 ========== -->
+<section id="field" class="relative py-24 md:py-32 grad-bg noise overflow-hidden">
+  <div class="pointer-events-none absolute -bottom-20 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-mint to-sky2 opacity-40 blur-3xl"></div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 relative">
+    <div class="mb-14 scroll-reveal max-w-3xl">
+      <div class="chip mb-4"><span class="w-2 h-2 rounded-full bg-mint"></span>D) FIELD / 活動の場</div>
+      <h2 class="font-black text-4xl md:text-6xl leading-tight">活動の場</h2>
+    </div>
+
+    <!-- 阪大生・卒業生 -->
+    <div id="student" class="bento bg-gradient-to-br from-ink to-indigo-900 text-white p-8 md:p-14 mb-6 card-hover scroll-reveal relative overflow-hidden">
+      <div class="absolute -right-10 -top-10 w-72 h-72 rounded-full bg-gradient-to-br from-peach to-rose-400 opacity-40 blur-2xl"></div>
+      <div class="relative">
+        <div class="text-xs font-en tracking-widest opacity-60 mb-3">FOR STUDENTS & ALUMNI</div>
+        <h3 class="font-black text-3xl md:text-5xl leading-tight mb-2">阪大生・卒業生の方へ</h3>
+        <p class="text-sm opacity-80 mb-8">2023年度 メディエーター募集要項</p>
+
+        <div class="prose-center opacity-90 text-[15px] mb-10 max-w-3xl">
+          <p>複言語・複文化共存社会研究センター(通称：阪大ふくふくセンター、以下センター)は、大学で複言語・複文化の力を身につけ、それを社会のために活かしたいと願う学生・卒業生・教職員の皆さんと、支援を必要とする外国にルーツを持つ子どもたちが過ごす現場を繋ぎます。皆さんには、ご自身の複言語・複文化の力を以て、異なる立場にいる人々を仲介する「メディエーター」としてご活動いただきます。皆さんのご応募をお待ちしています。</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-10">
+          <div class="glass-dark rounded-2xl p-5">
+            <div class="text-xs font-en opacity-60 mb-2">応募資格</div>
+            <p class="text-sm leading-relaxed">大阪大学に在籍する学生（学部生・院生・留学生）・教職員（正規/非正規を問わない）または大阪大学・大阪外国語大学を卒業・修了した方</p>
+          </div>
+          <div class="glass-dark rounded-2xl p-5">
+            <div class="text-xs font-en opacity-60 mb-2">謝金(報酬)</div>
+            <p class="text-sm leading-relaxed">謝金(報酬)や交通費の支給、保険加入の有無は現場によって異なります。マッチングの際に条件を提示しますので、確認をお願いします。</p>
+          </div>
+        </div>
+
+        <div class="text-xs font-en opacity-60 mb-4">活動内容</div>
+        <div class="grid md:grid-cols-5 gap-3 mb-10">
+          <div class="glass-dark rounded-2xl p-5">
+            <div class="w-8 h-8 rounded-full bg-peach text-ink font-black flex items-center justify-center text-sm mb-3">1</div>
+            <div class="font-bold text-sm mb-2">メディエーター登録説明会</div>
+            <p class="text-xs opacity-75 leading-relaxed">外国にルーツを持つ子どもたちが過ごす現場で活動するうえで大切な心構えを学びます。メディエーター登録説明会は年に２回実施します。説明会参加者にメディエーター登録のご案内をお送りします。</p>
+          </div>
+          <div class="glass-dark rounded-2xl p-5">
+            <div class="w-8 h-8 rounded-full bg-lemon text-ink font-black flex items-center justify-center text-sm mb-3">2</div>
+            <div class="font-bold text-sm mb-2">マッチング</div>
+            <p class="text-xs opacity-75 leading-relaxed">センターが登録者と現場のマッチングを行います。必要に応じて面接等を行う場合があります。全ての登録者に活動を紹介できるとは限りません。</p>
+          </div>
+          <div class="glass-dark rounded-2xl p-5">
+            <div class="w-8 h-8 rounded-full bg-mint text-ink font-black flex items-center justify-center text-sm mb-3">3</div>
+            <div class="font-bold text-sm mb-2">活動</div>
+            <p class="text-xs opacity-75 leading-relaxed">担当する現場において活動を行います。</p>
+          </div>
+          <div class="glass-dark rounded-2xl p-5">
+            <div class="w-8 h-8 rounded-full bg-sky2 text-ink font-black flex items-center justify-center text-sm mb-3">4</div>
+            <div class="font-bold text-sm mb-2">共有・相談</div>
+            <p class="text-xs opacity-75 leading-relaxed">センターが開催するミーティングに参加し、課題を共有します。また、活動中に迷うことや困ったことがあれば、随時センターにご相談いただけます。</p>
+          </div>
+          <div class="glass-dark rounded-2xl p-5">
+            <div class="w-8 h-8 rounded-full bg-lilac text-ink font-black flex items-center justify-center text-sm mb-3">5</div>
+            <div class="font-bold text-sm mb-2">報告</div>
+            <p class="text-xs opacity-75 leading-relaxed">活動内容の報告をします。</p>
+          </div>
+        </div>
+
+        <details class="glass-dark rounded-2xl p-5 mb-6">
+          <summary class="font-bold flex justify-between items-center"><span>注意事項を読む</span><span class="text-xl">＋</span></summary>
+          <ol class="mt-4 space-y-2 text-xs opacity-85 leading-relaxed list-decimal list-inside">
+            <li>国籍、性別、年齢等に関わらずご応募いただけます。</li>
+            <li>応募に際し、外国語能力や教育能力に一定の基準を設けることはありませんが、使用できる言語や対応できる教科等により、紹介できる現場は異なります。全ての登録者に必ず活動を紹介できるわけではないことをあらかじめご承知おきください。</li>
+            <li>活動に関する連絡は、応募時に記載されたメールアドレス宛てにお送りします。応募後は、定期的にメールボックスの確認をお願いします。添付ファイルや関連リンクをお送りすることもありますので、そうした内容の送受信に支障が生じにくいアドレスの登録をお願いします。期限のある連絡に対して返信がない場合や連絡が滞りがちになった場合、活動への参加をお断りする場合があります。</li>
+            <li>登録期間は原則、登録した年度の3月31日までです。登録者には年度末に次年度の登録継続の可否を伺います。卒業年度の学生も、卒業生として引き続き登録することが可能です。時期に関わらず、登録の取り消しを希望する場合には、センターまで申し出てください。</li>
+          </ol>
+        </details>
+
+        <div class="text-sm opacity-85 mb-6">
+          阪大ふくふくセンターホームページのイベント欄に、随時メディエーター登録説明会のお知らせを掲載します。ご確認の上、お申込みください。メディエーター登録説明会の開催情報について、連絡を希望される方は、フォームよりメールアドレスをご登録ください。
+        </div>
+        <a href="#contact" class="btn-primary">登録フォームはこちら →</a>
+      </div>
+    </div>
+
+    <!-- 学校・自治体・団体 -->
+    <div id="org" class="bento bg-white p-8 md:p-14 card-hover scroll-reveal relative overflow-hidden">
+      <div class="absolute -right-10 -top-10 w-72 h-72 rounded-full bg-gradient-to-br from-sky2 to-lilac opacity-40 blur-2xl"></div>
+      <div class="relative">
+        <div class="text-xs font-en tracking-widest text-ink/50 mb-3">FOR SCHOOLS & COMMUNITY</div>
+        <h3 class="font-black text-3xl md:text-5xl leading-tight mb-2">学校・自治体・団体の方へ</h3>
+        <p class="text-sm text-ink/60 mb-8">2023年度 協働団体 募集要項</p>
+
+        <div class="prose-center text-ink/80 text-[15px] mb-10 max-w-3xl">
+          <p>複言語・複文化共存社会研究センター(通称：阪大ふくふくセンター、以下センター)は、外国にルーツを持つ子どもたちが過ごす現場と、大学で複言語・複文化の力を身につけ、それを社会のために活かしたいと願う学生・卒業生・教職員を繋ぎます。複言語・複文化の力を以て、異なる立場にいる人々を仲介する「メディエーター」と協働して、よりよい活動の実施を目指す団体を募集します。皆さんのご応募をお待ちしています。</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-mint/20 mb-8">
+          <div class="text-xs text-ink/50 font-bold mb-2">応募資格</div>
+          <p class="text-sm">外国にルーツを持つ子どもたちが在籍する学校、支援団体等</p>
+        </div>
+
+        <div class="text-xs font-en text-ink/50 mb-4">協働内容</div>
+        <div class="grid md:grid-cols-5 gap-3 mb-10">
+          <div class="p-5 rounded-2xl bg-peach/30">
+            <div class="font-black text-xl mb-2">1</div>
+            <div class="font-bold text-sm mb-2">応募</div>
+            <p class="text-xs text-ink/70 leading-relaxed">阪大ふくふくセンターホームページの応募フォームより必要事項をご回答ください。</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-lemon/40">
+            <div class="font-black text-xl mb-2">2</div>
+            <div class="font-bold text-sm mb-2">マッチング</div>
+            <p class="text-xs text-ink/70 leading-relaxed">センターが現場と登録者とのマッチングを行います。必要に応じてお電話での相談や面談を行う場合があります。ご要望に応えられないこともありますのでご了承ください。</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-mint/40">
+            <div class="font-black text-xl mb-2">3</div>
+            <div class="font-bold text-sm mb-2">紹介</div>
+            <p class="text-xs text-ink/70 leading-relaxed">マッチングした登録者（メディエーター）をセンターから紹介します。指導員やスクールサポーター等として登録が必要な場合は、お手続きをお願いします。</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-sky2/40">
+            <div class="font-black text-xl mb-2">4</div>
+            <div class="font-bold text-sm mb-2">共有・相談</div>
+            <p class="text-xs text-ink/70 leading-relaxed">活動中に迷うことや困ったことがあれば、随時センターにご相談いただけます。</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-lilac/40">
+            <div class="font-black text-xl mb-2">5</div>
+            <div class="font-bold text-sm mb-2">報告</div>
+            <p class="text-xs text-ink/70 leading-relaxed">センターに活動内容の報告をしていただきます。</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="p-5 rounded-2xl bg-ink/5">
+            <div class="text-xs text-ink/50 font-bold mb-2">応募受付期間</div>
+            <p class="text-sm">随時</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-ink/5">
+            <div class="text-xs text-ink/50 font-bold mb-2">応募方法</div>
+            <p class="text-sm">応募フォームよりご回答ください。応募フォームからの回答が難しい場合は、ファイルにご記入いただきメールかFAXで送付ください。</p>
+          </div>
+        </div>
+
+        <details class="rounded-2xl bg-ink/5 p-5 mb-6">
+          <summary class="font-bold flex justify-between items-center"><span>注意事項を読む</span><span class="text-xl">＋</span></summary>
+          <ol class="mt-4 space-y-2 text-xs text-ink/75 leading-relaxed list-decimal list-inside">
+            <li>活動内容について、応募フォームに入力していただいた内容に基づき、事前にセンターからヒアリングをさせていただくことがあります。</li>
+            <li>マッチング中に、他の機関等を通じて協働者が見つかった場合は、速やかにセンターまでご連絡をお願いいたします。</li>
+            <li>登録期間は原則、登録した年度の3月31日までです。登録団体には年度末に次年度も登録を継続するかどうかを伺います。時期に関わらず、登録の取り消しを希望する場合には、センターまでお申し出ください。</li>
+          </ol>
+        </details>
+
+        <a href="#contact" class="btn-ghost !border-ink">応募フォーム →</a>
+      </div>
+    </div>
+
+    <!-- イベント情報 -->
+    <div id="events" class="mt-16">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-8 scroll-reveal">
+        <div class="flex items-center gap-3">
+          <span class="font-chunky text-4xl md:text-5xl">03</span>
+          <div>
+            <h3 class="font-rock text-2xl md:text-3xl">イベント <span class="font-en text-lg text-ink/40">EVENT</span></h3>
+            <p class="text-sm text-ink/70">公開講義・説明会・研修など、参加できる機会のご案内。</p>
+          </div>
+        </div>
+        <a href="#" class="btn-ghost sticker-card !rounded-full">一覧はこちら →</a>
+      </div>
+
+      <div class="grid gap-4">
+        <a href="#" class="group block sticker-card rounded-3xl p-6 md:p-7 card-hover scroll-reveal">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="chip sticker-pink !border-2 !border-ink font-bold">その他</span>
+                <time class="text-xs text-ink/60 font-en">2026.4.8</time>
+              </div>
+              <h4 class="font-black text-base md:text-lg leading-snug">【2026.4.25 (土)】授業「在日外国人をとりまく現状と課題を考える」第2回目公開のお知らせ</h4>
+            </div>
+            <span class="text-3xl opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
+          </div>
+        </a>
+        <a href="#" class="group block sticker-card rounded-3xl p-6 md:p-7 card-hover scroll-reveal">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="chip sticker-pink !border-2 !border-ink font-bold">その他</span>
+                <time class="text-xs text-ink/60 font-en">2026.4.8</time>
+              </div>
+              <h4 class="font-black text-base md:text-lg leading-snug">【2026.4.11 (土)】授業「在日外国人をとりまく現状と課題を考える」第1回目公開のお知らせ</h4>
+            </div>
+            <span class="text-3xl opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
+          </div>
+        </a>
+        <a href="#" class="group block sticker-card rounded-3xl p-6 md:p-7 card-hover scroll-reveal">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="chip sticker-acid !border-2 !border-ink font-bold">阪大生・卒業生の方</span>
+                <time class="text-xs text-ink/60 font-en">2026.3.11</time>
+              </div>
+              <h4 class="font-black text-base md:text-lg leading-snug">2026年度春期メディエーター登録説明会　開催のお知らせ</h4>
+            </div>
+            <span class="text-3xl opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
+          </div>
+        </a>
+        <a href="#" class="group block sticker-card rounded-3xl p-6 md:p-7 card-hover scroll-reveal">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="chip sticker-pink !border-2 !border-ink font-bold">その他</span>
+                <time class="text-xs text-ink/60 font-en">2026.1.8</time>
+              </div>
+              <h4 class="font-black text-base md:text-lg leading-snug">「外国にルーツを持つ子どもの現状と課題を考える」授業公開のお知らせ</h4>
+            </div>
+            <span class="text-3xl opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
+          </div>
+        </a>
+        <a href="#" class="group block sticker-card rounded-3xl p-6 md:p-7 card-hover scroll-reveal">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="chip sticker-pink !border-2 !border-ink font-bold">その他</span>
+                <time class="text-xs text-ink/60 font-en">2026.1.8</time>
+              </div>
+              <h4 class="font-black text-base md:text-lg leading-snug">外国人患者対応能力向上研修を行います</h4>
+            </div>
+            <span class="text-3xl opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== E) 学びの広場（準備中） ========== -->
+<section id="learning" class="relative py-24 md:py-32 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 relative">
+    <div class="absolute top-0 left-0 mega-num stroke-text opacity-20 pointer-events-none select-none">E</div>
+    <div class="mb-10 scroll-reveal max-w-3xl relative">
+      <div class="chip sticker-acid !border-2 !border-ink font-bold mb-4">E) LEARNING / 学びの広場</div>
+      <h2 class="font-rock text-4xl md:text-6xl leading-tight">学びの広場</h2>
+    </div>
+    <div class="max-w-3xl mx-auto scroll-reveal sticker-card p-12 md:p-20 text-center">
+      <div class="inline-block text-xs tracking-[.25em] text-ink/50 font-medium mb-4">COMING SOON</div>
+      <h3 class="font-rock text-3xl md:text-4xl mb-4">準備中</h3>
+      <p class="text-ink/65 leading-loose max-w-xl mx-auto">センターが発信する学びのコンテンツ・教材・アーカイブを順次公開予定です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 基金 ========== -->
+<section class="relative py-20 bg-gradient-to-br from-amber-50 via-rose-50 to-sky-50 overflow-hidden">
+  <div class="max-w-5xl mx-auto px-5 md:px-8 scroll-reveal">
+    <div class="bento glass p-8 md:p-12 text-center">
+      <div class="chip mb-4 mx-auto"><span class="w-2 h-2 rounded-full bg-rose-400"></span>FUND / ご支援のお願い</div>
+      <h2 class="font-black text-2xl md:text-4xl mb-5 leading-tight">阪大ふくふくセンターへのご支援</h2>
+      <p class="text-sm md:text-base text-ink/75 leading-loose max-w-3xl mx-auto mb-6">
+        阪大ふくふくセンターの取り組みの充実を図るため、「外国にルーツを持つ子どもたちの支援環境充実事業」基金を立ち上げました。何卒、本事業の趣旨にご賛同いただき、ご支援を賜りますようよろしくお願いいたします。
+      </p>
+      <a href="#" class="btn-primary">ご支援はこちら（大阪大学未来基金）→</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="relative py-24 md:py-32 overflow-hidden bg-ink text-white">
+  <div class="max-w-5xl mx-auto px-5 md:px-8 relative text-center scroll-reveal">
+    <div class="chip !bg-white/10 !border-white/20 !text-white mb-6 mx-auto">
+      <span class="w-2 h-2 rounded-full bg-peach animate-pulse"></span>CONTACT / お問い合わせ
+    </div>
+    <h2 class="font-black text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight mb-8">
+      <span class="text-gradient">ふくふく</span>と、<br />はじめよう。
+    </h2>
+    <p class="text-white/70 text-base md:text-lg leading-loose max-w-2xl mx-auto mb-10">
+      ご相談、活動への参加、講演・研修のご依頼。お気軽にお問い合わせください。
+    </p>
+    <div class="flex flex-wrap gap-3 justify-center mb-12">
+      <a href="mailto:contact@derc.hmt.osaka-u.ac.jp" class="btn-primary">メールで問い合わせ</a>
+      <a href="tel:0727305094" class="btn-ghost !bg-white/10 !text-white !border-white/20 hover:!bg-white/20">TEL: 072-730-5094</a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4 text-left mt-8">
+      <div class="glass-dark rounded-2xl p-5"><div class="text-xs font-en text-white/50 tracking-widest mb-2">ADDRESS</div><div class="text-sm leading-relaxed">〒562-8678<br />大阪府箕面市船場東3-5-10<br />大阪大学 箕面キャンパス内</div></div>
+      <div class="glass-dark rounded-2xl p-5"><div class="text-xs font-en text-white/50 tracking-widest mb-2">EMAIL</div><div class="text-sm break-all">contact(at)derc.hmt.osaka-u.ac.jp<br /><span class="text-xs text-white/50">※(at)は@に置き換えてください。</span></div></div>
+      <div class="glass-dark rounded-2xl p-5"><div class="text-xs font-en text-white/50 tracking-widest mb-2">TEL / FAX</div><div class="text-sm">072-730-5094</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="bg-[#0f0b1f] text-white/80 pt-16 pb-10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="grid md:grid-cols-12 gap-10 mb-12">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3 mb-5 bg-white/95 rounded-2xl p-3 inline-flex">
+          <img src="sozai/GinkgoLeafSymbol-DERC_Symbolmark.png" alt="" class="h-10" />
+          <img src="sozai/title.png" alt="阪大ふくふくセンター" class="h-10" />
+        </div>
+        <div class="text-xs text-white/50 font-en mb-3">Osaka University DERC</div>
+        <p class="text-sm text-white/60 leading-relaxed max-w-md">大阪大学大学院人文学研究科附属<br />複言語・複文化共存社会研究センター</p>
+      </div>
+      <div class="md:col-span-4">
+        <div class="text-xs font-en tracking-widest text-white/40 mb-4">SITEMAP</div>
+        <div class="grid grid-cols-2 gap-2 text-sm">
+          <a href="#top" class="hover:text-white">TOP</a>
+          <a href="#about" class="hover:text-white">阪大ふくふくセンターとは</a>
+          <a href="#research" class="hover:text-white">活動事例</a>
+          <a href="#student" class="hover:text-white">阪大生・卒業生の方へ</a>
+          <a href="#org" class="hover:text-white">学校・自治体・団体の方へ</a>
+          <a href="#learning" class="hover:text-white">イベント情報</a>
+          <a href="#news" class="hover:text-white">ニュース</a>
+          <a href="#contact" class="hover:text-white">お問い合わせ</a>
+        </div>
+      </div>
+      <div class="md:col-span-3">
+        <div class="text-xs font-en tracking-widest text-white/40 mb-4">阪大ふくふくセンターとは</div>
+        <div class="space-y-2 text-sm text-white/70">
+          <a href="#greeting" class="block hover:text-white">ご挨拶</a>
+          <a href="#introduction" class="block hover:text-white">設立の趣旨・理念</a>
+          <a href="#introduction" class="block hover:text-white">概要</a>
+          <a href="#organization" class="block hover:text-white">組織</a>
+          <a href="#access" class="block hover:text-white">アクセス</a>
+        </div>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs text-white/40">
+      <div>Copyright(C) 阪大ふくふくセンター ALL Rights Reserved.</div>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-white">サイトマップ</a>
+        <a href="#" class="hover:text-white">サイトポリシー</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn?.addEventListener('click', () => menu.classList.toggle('hidden'));
+  menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.add('hidden')));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.scroll-reveal').forEach(el => io.observe(el));
+  // cursor spotlight
+  document.querySelectorAll('.spot-wrap').forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+</script>
+</body>
+</html>
