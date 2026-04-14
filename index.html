@@ -727,14 +727,14 @@
   <div style="background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(24px);border:1px solid rgba(255,255,255,.9);border-radius:28px;box-shadow:0 20px 60px -20px rgba(120,80,160,.25);padding:3rem 2.5rem;max-width:420px;width:92%;text-align:center;font-family:'Zen Maru Gothic','Noto Sans JP',sans-serif;">
     <img src="sozai/title.png" alt="阪大ふくふくセンター" style="max-width:240px;margin:0 auto 1.5rem;display:block;" />
     <div style="font-size:.75rem;letter-spacing:.25em;color:#8a7d9a;margin-bottom:.5rem;">PRIVATE PREVIEW</div>
-    <h2 style="font-size:1.5rem;font-weight:900;color:#2a2434;margin-bottom:.5rem;letter-spacing:-.02em;">合言葉を入力してください</h2>
-    <p style="font-size:.85rem;color:#6a5d7a;margin-bottom:1.5rem;line-height:1.7;">このページはプレビュー用です。<br />合言葉をご存じの方のみご覧いただけます。</p>
+    <h2 style="font-size:1.5rem;font-weight:900;color:#2a2434;margin-bottom:.5rem;letter-spacing:-.02em;"><span data-lang="ja">合言葉を入力してください</span><span data-lang="en">Enter the passphrase</span></h2>
+    <p style="font-size:.85rem;color:#6a5d7a;margin-bottom:1.5rem;line-height:1.7;"><span data-lang="ja">このページはプレビュー用です。<br />合言葉をご存じの方のみご覧いただけます。</span><span data-lang="en">This page is a private preview.<br />Only those with the passphrase may enter.</span></p>
     <form id="gateForm" onsubmit="return checkPass(event)">
-      <input id="gatePass" type="password" placeholder="あいことば" autocomplete="off"
+      <input id="gatePass" type="password" placeholder="passphrase / あいことば" autocomplete="off"
         style="width:100%;padding:.9rem 1.2rem;border-radius:999px;border:1px solid rgba(0,0,0,.08);background:#fff;font-size:1rem;font-family:inherit;outline:none;text-align:center;box-shadow:inset 0 1px 3px rgba(0,0,0,.03);" />
       <div id="gateErr" style="color:#c85870;font-size:.8rem;margin-top:.6rem;min-height:1rem;"></div>
       <button type="submit" style="margin-top:.8rem;width:100%;padding:.9rem;border-radius:999px;border:none;background:linear-gradient(180deg,#2a2434,#1a1530);color:#fff;font-weight:600;font-size:.95rem;font-family:inherit;cursor:pointer;letter-spacing:.02em;box-shadow:0 8px 24px -12px rgba(60,40,90,.4);">
-        はいる
+        <span data-lang="ja">はいる</span><span data-lang="en">Enter</span>
       </button>
     </form>
   </div>
@@ -757,7 +757,8 @@
       g.style.transition = 'opacity .4s'; g.style.opacity = '0';
       setTimeout(function(){ g.style.display='none'; document.documentElement.style.overflow=''; }, 400);
     } else {
-      document.getElementById('gateErr').textContent = '合言葉が違います。';
+      var lang = document.documentElement.getAttribute('lang') || 'ja';
+      document.getElementById('gateErr').textContent = lang === 'en' ? 'Incorrect passphrase.' : '合言葉が違います。';
       document.getElementById('gatePass').value = '';
     }
     return false;
@@ -1343,19 +1344,29 @@
               <span class="chip !bg-rose-100 !border-rose-200 !text-rose-700">Case 01</span>
               <span class="text-xs font-en text-ink/50 tracking-widest">STUDENT REPORT</span>
             </div>
-            <div class="text-sm text-ink/70 mb-4">大阪大学外国語学部フィリピン語専攻卒業生　<strong>佐藤 南海</strong> さんの、フィリピン語を通じた教育支援の2年間。</div>
+            <div class="text-sm text-ink/70 mb-4">
+              <span data-lang="ja">大阪大学外国語学部フィリピン語専攻卒業生　<strong>佐藤 南海</strong> さんの、フィリピン語を通じた教育支援の2年間。</span>
+              <span data-lang="en">A two-year story of education support through Filipino, by <strong>Minami Sato</strong>, graduate of the Filipino program at the School of Foreign Studies, University of Osaka.</span>
+            </div>
             <details class="group">
               <summary class="inline-flex items-center gap-2 cursor-pointer select-none px-5 py-2.5 rounded-full bg-ink/5 hover:bg-ink/10 text-sm font-medium transition">
-                <span class="group-open:hidden">全文を読む</span>
-                <span class="hidden group-open:inline">閉じる</span>
+                <span class="group-open:hidden"><span data-lang="ja">全文を読む</span><span data-lang="en">Read full story</span></span>
+                <span class="hidden group-open:inline"><span data-lang="ja">閉じる</span><span data-lang="en">Close</span></span>
                 <span class="transition group-open:rotate-180">▾</span>
               </summary>
-              <div class="prose-center text-ink/80 text-[15px] mt-6">
+              <div class="prose-center text-ink/80 text-[15px] mt-6" data-lang="ja">
                 <p>大阪府内某市の教育委員会からの依頼で、外国にルーツを持つ子どもたちが公教育で学ぶための支援を行っていました。大好きなフィリピン人が日本で困っていて、それを私が少しでも救える立場にあることを知り、彼らを全力でサポートしたいという思いからこの活動を始めました。私はこの活動を2年間ほど続け、関わらせてもらった学校は計4校、受け持った児童・生徒は計10名です。</p>
                 <p>活動の中で、学校ごとに求める役割が違い、それに順応しながら授業を作っていくことにやりがいを感じました。今回は2校の授業の様子について紹介します。</p>
                 <p>1校目は「フィリピン語を話せるようになること」と「フィリピン人のご家族とコミュニケーションをとれるようになること」を求めている学校でした。私は、フィリピン語の挨拶や簡単な単語を読み書きしたり、ロールプレイしたりする授業を設計しました。最初の頃は彼らがフィリピンに興味を持っていないことに課題を感じていました。そこで担任や同じ活動をしている先輩の先生らにアドバイスを頂き、授業を大幅に変化させました。具体的には、授業だけで完結させるのではなく、フィリピン人の母親とコミュニケーションをとれる宿題を出したり、口・頭を使った授業を増やしたりしました。すると、少しずつ「おはようございます。」を「Magandang hapon po!（フィリピン語で「おはようございます」）」と言ってくれるようになることが増えました。</p>
                 <p>2校目は、「日本語の授業についていけるようになること」と「日本語でコミュニケーションをとれるようになること」を求めていました。そのため、授業中に隣の席に座って担任の先生の説明をフィリピン語に訳したり、簡単な日本語に説明し直したりすることが私の役割でした。その学校に小学1年生で繰り上がりの計算ができない子がいました。そこでその子が何を理解出来ていないのか考え、粘り強くその子と向き合っていくと、日本語がよく分からず数の概念が理解出来ていないことに気づきました。そこで手の指を使って計算することを教えました。その方法で計算の練習を進めていくうちに、やがて手を使わなくてもうまく計算できるようになりました。</p>
                 <p>社会人になった今、人をサポートする、という経験が役に立っていることを実感しています。サポートとは、その子どもの背景を知り、それに適した環境を作ってあげるということで、活動への参加を通じて実践的に人の立場に立って考えるという視点を得ることができました。私にとってこの活動は、フィリピン文化を学ぶ機会を得られるだけでなく、子どもが困っていることを一緒に解決することができる貴重な時間でした。この活動がより広まって、より多くの子どもたちが楽しいと感じる社会になることを願っています。</p>
+              </div>
+              <div class="prose-center text-ink/80 text-[15px] mt-6" data-lang="en">
+                <p>At the request of a municipal board of education in Osaka Prefecture, I supported children with foreign roots to learn in public schools. I started this work because I love Filipino people, and when I realized some were struggling in Japan and I was in a position to help even a little, I wanted to support them with all I had. I continued for about two years, working with four schools and ten children in total.</p>
+                <p>Each school asked for something different, and I found real meaning in adapting my lessons to match their needs. Here I'll share stories from two of them.</p>
+                <p>The first school wanted the children to "be able to speak Filipino" and to "communicate with their Filipino families." I designed lessons around Filipino greetings and simple vocabulary — reading, writing, and role-playing. At first, the children weren't very interested in the Philippines, and I struggled. Their homeroom teachers and more experienced colleagues gave me advice, and I made big changes. Rather than finishing everything in class, I gave homework that asked children to communicate with their Filipino mothers, and I increased the amount of spoken and hands-on work. Slowly, their morning greetings began to shift: "おはようございます" would become "Magandang hapon po!" ("good morning" in Filipino).</p>
+                <p>The second school wanted the children to "keep up with Japanese-language lessons" and "communicate in Japanese." My role there was to sit next to the child in class, translate the teacher's explanations into Filipino, or rephrase them into simpler Japanese. One first-grader couldn't do carry-over addition. As I thought carefully about what she wasn't understanding and stayed with her patiently, I realized her Japanese wasn't strong enough for her to understand the concept of number itself. I taught her to count using her fingers, and as she practiced, she eventually no longer needed them.</p>
+                <p>Now that I'm working in society, I realize how much that experience of supporting others helps me. "Support," I learned, means understanding the child's background and creating the right environment for them — and through participating in this work, I gained the ability to think practically from another person's perspective. For me, this wasn't just a chance to learn about Filipino culture; it was precious time spent solving problems together with a child. I hope this kind of work spreads, and that more children grow up in a society that feels joyful to them.</p>
               </div>
             </details>
           </div>
@@ -1372,14 +1383,17 @@
               <span class="chip !bg-sky-100 !border-sky-200 !text-sky-700">Case 02</span>
               <span class="text-xs font-en text-ink/50 tracking-widest">STUDENT REPORT</span>
             </div>
-            <div class="text-sm text-ink/70 mb-4">大阪大学大学院人文学研究科日本学専攻　<strong>田中 倫</strong> さんの、ベトナムルーツの子どもたちと過ごした2年間の「学び直し」。</div>
+            <div class="text-sm text-ink/70 mb-4">
+              <span data-lang="ja">大阪大学大学院人文学研究科日本学専攻　<strong>田中 倫</strong> さんの、ベトナムルーツの子どもたちと過ごした2年間の「学び直し」。</span>
+              <span data-lang="en">A two-year "re-learning" journey with children of Vietnamese roots, by <strong>Rin Tanaka</strong>, Japanese Studies, Graduate School of Humanities, University of Osaka.</span>
+            </div>
             <details class="group">
               <summary class="inline-flex items-center gap-2 cursor-pointer select-none px-5 py-2.5 rounded-full bg-ink/5 hover:bg-ink/10 text-sm font-medium transition">
-                <span class="group-open:hidden">全文を読む</span>
-                <span class="hidden group-open:inline">閉じる</span>
+                <span class="group-open:hidden"><span data-lang="ja">全文を読む</span><span data-lang="en">Read full story</span></span>
+                <span class="hidden group-open:inline"><span data-lang="ja">閉じる</span><span data-lang="en">Close</span></span>
                 <span class="transition group-open:rotate-180">▾</span>
               </summary>
-              <div class="prose-center text-ink/80 text-[15px] mt-6">
+              <div class="prose-center text-ink/80 text-[15px] mt-6" data-lang="ja">
                 <p>阪大ふくふくセンターを通して参加する活動は、子どもたちに何かを教えるのではなく、学生自身が子どもの存在に励まされながら「学び直す」活動になると考えます。</p>
                 <p>私は2021〜2022年度の2年間、大阪府内某市の小学校２校において、外国にルーツがある子どもたち（CLD児）が自分のルーツの国の言語・文化について学ぶためのクラスで講師を務めました。私は学部時代にベトナム語を学んだご縁で、ベトナムルーツの子どもたちを担当しました。</p>
                 <p>白状いたしますと、私は学部時代よりも活動に参加した2年間の方が必死で勉強しました。担当している子どもに寄り添うためには、受け身の知識だけでは立ち行かなくなったからです。他でもないその子が知りたがっている言語・文化的知識を集めるだけでなく、多様なルーツを持つ子どもたちを取り巻く困難について理解を深めることも必要でした。</p>
@@ -1387,6 +1401,15 @@
                 <p>二つ目は、子どもから「ベトナム語はお家だけ。日本の学校は日本語しかダメ」というプレッシャーを取り除くことです。場所が変わっても、ルーツの言語や文化は常に子どもの一部です。自身の言語的・文化的背景を丸ごと受け入れられる安心感と、持ち得る全てのことばを使って学ぶことができる環境は、本来当然補償されるべきと考えます。このクラスは短時間で少規模ですが、それを実現した空間になるよう努めました。</p>
                 <p>三つ目は、小学校の先生方と密に連携してクラスを作ることです。私の担当した学校では、学習テーマは先生が決めてくださり、そこから子どものレベルに合わせた学習目標を相談して決めました。また、このクラスが関係者だけの閉ざされた活動にならないように、子どもにとって普段の学校生活と地続きになるように、学習内容は在籍学級でも紹介してもらうことを想定して検討しました。</p>
                 <p>活動はいつも試行錯誤ばかりでしたが、子どもと一緒に過ごした時間がとにかく楽しくて、大好きでした。同じように活動に参加する学生が増え、喜びの輪が広がっていくと私も嬉しいです。</p>
+              </div>
+              <div class="prose-center text-ink/80 text-[15px] mt-6" data-lang="en">
+                <p>I believe that the activities you take part in through the Fukufuku Center are not about teaching children something — they're about students themselves "re-learning," encouraged by the children's presence.</p>
+                <p>From 2021 to 2022, for two years, I taught a class at two elementary schools in a municipality in Osaka Prefecture — a class where children with foreign roots (CLD children) could learn about the language and culture of their heritage country. Because I had studied Vietnamese as an undergraduate, I was assigned to children of Vietnamese heritage.</p>
+                <p>Honestly, I studied harder during those two years than I ever did as an undergraduate. To stand beside the children I was working with, passive knowledge wasn't enough — I had to gather the specific linguistic and cultural knowledge each child wanted, and also deepen my understanding of the challenges faced by children with diverse roots.</p>
+                <p>Through this ongoing "re-learning," I focused on three things in class. First, designing lesson plans and materials that would bring out each child's existing Vietnamese abilities to the fullest. I began by gathering information: what language or dialect did the child speak with family; how strong were their speaking, listening, writing, and reading skills; did their parents have any particular stance on Vietnamese-language education? I aimed to build lessons just one step beyond the Vietnamese they were already using at home.</p>
+                <p>Second, lifting the pressure that says "Vietnamese is only for home. At Japanese school, only Japanese." Wherever a child is, their heritage language and culture are always a part of them. A sense of safety that allows one's full linguistic and cultural self to be accepted, and an environment where every language one has can be used for learning — these should rightfully be guaranteed. Even in short, small-scale class time, I tried to create that kind of space.</p>
+                <p>Third, working closely with the elementary school teachers to build the class together. At the schools where I worked, the teachers chose the learning themes, and we discussed together how to set goals matched to each child's level. I also made sure the class wouldn't become a closed-off activity — I planned content expecting it to be introduced in their regular classrooms too, so it would feel continuous with their everyday school life.</p>
+                <p>The work was always trial and error, but the time I spent with the children was simply fun, and I loved it. I would be so glad if more students joined activities like this and the circle of joy kept widening.</p>
               </div>
             </details>
           </div>
@@ -1410,68 +1433,82 @@
     <div id="student" class="bento bg-gradient-to-br from-ink to-indigo-900 text-white p-8 md:p-14 mb-6 card-hover scroll-reveal relative overflow-hidden">
       <div class="absolute -right-10 -top-10 w-72 h-72 rounded-full bg-gradient-to-br from-peach to-rose-400 opacity-40 blur-2xl"></div>
       <div class="relative">
-        <div class="text-xs font-en tracking-widest opacity-60 mb-3">FOR STUDENTS & ALUMNI</div>
-        <h3 class="font-black text-3xl md:text-5xl leading-tight mb-2">阪大生・卒業生の方へ</h3>
-        <p class="text-sm opacity-80 mb-8">2023年度 メディエーター募集要項</p>
+        <div class="text-xs font-en tracking-widest opacity-60 mb-3">FOR STUDENTS &amp; ALUMNI</div>
+        <h3 class="font-black text-3xl md:text-5xl leading-tight mb-2"><span data-lang="ja">阪大生・卒業生の方へ</span><span data-lang="en">For Students &amp; Alumni</span></h3>
+        <p class="text-sm opacity-80 mb-8"><span data-lang="ja">2023年度 メディエーター募集要項</span><span data-lang="en">Mediator Recruitment Guidelines (2023)</span></p>
 
         <div class="prose-center opacity-90 text-[15px] mb-10 max-w-3xl">
-          <p>複言語・複文化共存社会研究センター(通称：阪大ふくふくセンター、以下センター)は、大学で複言語・複文化の力を身につけ、それを社会のために活かしたいと願う学生・卒業生・教職員の皆さんと、支援を必要とする外国にルーツを持つ子どもたちが過ごす現場を繋ぎます。皆さんには、ご自身の複言語・複文化の力を以て、異なる立場にいる人々を仲介する「メディエーター」としてご活動いただきます。皆さんのご応募をお待ちしています。</p>
+          <p>
+            <span data-lang="ja">複言語・複文化共存社会研究センター(通称：阪大ふくふくセンター、以下センター)は、大学で複言語・複文化の力を身につけ、それを社会のために活かしたいと願う学生・卒業生・教職員の皆さんと、支援を必要とする外国にルーツを持つ子どもたちが過ごす現場を繋ぎます。皆さんには、ご自身の複言語・複文化の力を以て、異なる立場にいる人々を仲介する「メディエーター」としてご活動いただきます。皆さんのご応募をお待ちしています。</span>
+            <span data-lang="en">The Diversity and Community Engagement Research Center (hereafter, "the Center") connects students, alumni, faculty, and staff who have built multilingual and multicultural skills at the university and wish to put those skills to work for society — with the places where children with foreign roots live and learn. You will serve as a "Mediator," using your multilingual and multicultural strength to bridge people in different positions. We look forward to your application.</span>
+          </p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-4 mb-10">
           <div class="glass-dark rounded-2xl p-5">
-            <div class="text-xs font-en opacity-60 mb-2">応募資格</div>
-            <p class="text-sm leading-relaxed">大阪大学に在籍する学生（学部生・院生・留学生）・教職員（正規/非正規を問わない）または大阪大学・大阪外国語大学を卒業・修了した方</p>
+            <div class="text-xs font-en opacity-60 mb-2"><span data-lang="ja">応募資格</span><span data-lang="en">Eligibility</span></div>
+            <p class="text-sm leading-relaxed"><span data-lang="ja">大阪大学に在籍する学生（学部生・院生・留学生）・教職員（正規/非正規を問わない）または大阪大学・大阪外国語大学を卒業・修了した方</span><span data-lang="en">Currently enrolled students (undergraduate, graduate, exchange) or faculty/staff (regular or non-regular) of the University of Osaka, or graduates of the University of Osaka or the former Osaka University of Foreign Studies.</span></p>
           </div>
           <div class="glass-dark rounded-2xl p-5">
-            <div class="text-xs font-en opacity-60 mb-2">謝金(報酬)</div>
-            <p class="text-sm leading-relaxed">謝金(報酬)や交通費の支給、保険加入の有無は現場によって異なります。マッチングの際に条件を提示しますので、確認をお願いします。</p>
+            <div class="text-xs font-en opacity-60 mb-2"><span data-lang="ja">謝金(報酬)</span><span data-lang="en">Honorarium</span></div>
+            <p class="text-sm leading-relaxed"><span data-lang="ja">謝金(報酬)や交通費の支給、保険加入の有無は現場によって異なります。マッチングの際に条件を提示しますので、確認をお願いします。</span><span data-lang="en">Honoraria, travel allowances, and insurance coverage vary by site. Conditions will be presented at the time of matching — please review them then.</span></p>
           </div>
         </div>
 
-        <div class="text-xs font-en opacity-60 mb-4">活動内容</div>
+        <div class="text-xs font-en opacity-60 mb-4"><span data-lang="ja">活動内容</span><span data-lang="en">How it works</span></div>
         <div class="grid md:grid-cols-5 gap-3 mb-10">
           <div class="glass-dark rounded-2xl p-5">
             <div class="w-8 h-8 rounded-full bg-peach text-ink font-black flex items-center justify-center text-sm mb-3">1</div>
-            <div class="font-bold text-sm mb-2">メディエーター登録説明会</div>
-            <p class="text-xs opacity-75 leading-relaxed">外国にルーツを持つ子どもたちが過ごす現場で活動するうえで大切な心構えを学びます。メディエーター登録説明会は年に２回実施します。説明会参加者にメディエーター登録のご案内をお送りします。</p>
+            <div class="font-bold text-sm mb-2"><span data-lang="ja">メディエーター登録説明会</span><span data-lang="en">Registration Briefing</span></div>
+            <p class="text-xs opacity-75 leading-relaxed"><span data-lang="ja">外国にルーツを持つ子どもたちが過ごす現場で活動するうえで大切な心構えを学びます。メディエーター登録説明会は年に２回実施します。説明会参加者にメディエーター登録のご案内をお送りします。</span><span data-lang="en">Learn the essential mindset for working in places where children with foreign roots spend their time. Briefings are held twice a year. Attendees receive registration information.</span></p>
           </div>
           <div class="glass-dark rounded-2xl p-5">
             <div class="w-8 h-8 rounded-full bg-lemon text-ink font-black flex items-center justify-center text-sm mb-3">2</div>
-            <div class="font-bold text-sm mb-2">マッチング</div>
-            <p class="text-xs opacity-75 leading-relaxed">センターが登録者と現場のマッチングを行います。必要に応じて面接等を行う場合があります。全ての登録者に活動を紹介できるとは限りません。</p>
+            <div class="font-bold text-sm mb-2"><span data-lang="ja">マッチング</span><span data-lang="en">Matching</span></div>
+            <p class="text-xs opacity-75 leading-relaxed"><span data-lang="ja">センターが登録者と現場のマッチングを行います。必要に応じて面接等を行う場合があります。全ての登録者に活動を紹介できるとは限りません。</span><span data-lang="en">The Center matches registrants to sites. Interviews may be held when needed. Not every registrant can be matched to an activity.</span></p>
           </div>
           <div class="glass-dark rounded-2xl p-5">
             <div class="w-8 h-8 rounded-full bg-mint text-ink font-black flex items-center justify-center text-sm mb-3">3</div>
-            <div class="font-bold text-sm mb-2">活動</div>
-            <p class="text-xs opacity-75 leading-relaxed">担当する現場において活動を行います。</p>
+            <div class="font-bold text-sm mb-2"><span data-lang="ja">活動</span><span data-lang="en">Activity</span></div>
+            <p class="text-xs opacity-75 leading-relaxed"><span data-lang="ja">担当する現場において活動を行います。</span><span data-lang="en">Carry out activities at your assigned site.</span></p>
           </div>
           <div class="glass-dark rounded-2xl p-5">
             <div class="w-8 h-8 rounded-full bg-sky2 text-ink font-black flex items-center justify-center text-sm mb-3">4</div>
-            <div class="font-bold text-sm mb-2">共有・相談</div>
-            <p class="text-xs opacity-75 leading-relaxed">センターが開催するミーティングに参加し、課題を共有します。また、活動中に迷うことや困ったことがあれば、随時センターにご相談いただけます。</p>
+            <div class="font-bold text-sm mb-2"><span data-lang="ja">共有・相談</span><span data-lang="en">Share &amp; Consult</span></div>
+            <p class="text-xs opacity-75 leading-relaxed"><span data-lang="ja">センターが開催するミーティングに参加し、課題を共有します。また、活動中に迷うことや困ったことがあれば、随時センターにご相談いただけます。</span><span data-lang="en">Join meetings hosted by the Center to share challenges. You can also consult with us anytime if questions or difficulties come up during your activity.</span></p>
           </div>
           <div class="glass-dark rounded-2xl p-5">
             <div class="w-8 h-8 rounded-full bg-lilac text-ink font-black flex items-center justify-center text-sm mb-3">5</div>
-            <div class="font-bold text-sm mb-2">報告</div>
-            <p class="text-xs opacity-75 leading-relaxed">活動内容の報告をします。</p>
+            <div class="font-bold text-sm mb-2"><span data-lang="ja">報告</span><span data-lang="en">Report</span></div>
+            <p class="text-xs opacity-75 leading-relaxed"><span data-lang="ja">活動内容の報告をします。</span><span data-lang="en">Submit a report on your activity.</span></p>
           </div>
         </div>
 
         <details class="glass-dark rounded-2xl p-5 mb-6">
-          <summary class="font-bold flex justify-between items-center"><span>注意事項を読む</span><span class="text-xl">＋</span></summary>
-          <ol class="mt-4 space-y-2 text-xs opacity-85 leading-relaxed list-decimal list-inside">
-            <li>国籍、性別、年齢等に関わらずご応募いただけます。</li>
-            <li>応募に際し、外国語能力や教育能力に一定の基準を設けることはありませんが、使用できる言語や対応できる教科等により、紹介できる現場は異なります。全ての登録者に必ず活動を紹介できるわけではないことをあらかじめご承知おきください。</li>
-            <li>活動に関する連絡は、応募時に記載されたメールアドレス宛てにお送りします。応募後は、定期的にメールボックスの確認をお願いします。添付ファイルや関連リンクをお送りすることもありますので、そうした内容の送受信に支障が生じにくいアドレスの登録をお願いします。期限のある連絡に対して返信がない場合や連絡が滞りがちになった場合、活動への参加をお断りする場合があります。</li>
-            <li>登録期間は原則、登録した年度の3月31日までです。登録者には年度末に次年度の登録継続の可否を伺います。卒業年度の学生も、卒業生として引き続き登録することが可能です。時期に関わらず、登録の取り消しを希望する場合には、センターまで申し出てください。</li>
-          </ol>
+          <summary class="font-bold flex justify-between items-center"><span><span data-lang="ja">注意事項を読む</span><span data-lang="en">Read important notes</span></span><span class="text-xl">＋</span></summary>
+          <div data-lang="ja">
+            <ol class="mt-4 space-y-2 text-xs opacity-85 leading-relaxed list-decimal list-inside">
+              <li>国籍、性別、年齢等に関わらずご応募いただけます。</li>
+              <li>応募に際し、外国語能力や教育能力に一定の基準を設けることはありませんが、使用できる言語や対応できる教科等により、紹介できる現場は異なります。全ての登録者に必ず活動を紹介できるわけではないことをあらかじめご承知おきください。</li>
+              <li>活動に関する連絡は、応募時に記載されたメールアドレス宛てにお送りします。応募後は、定期的にメールボックスの確認をお願いします。添付ファイルや関連リンクをお送りすることもありますので、そうした内容の送受信に支障が生じにくいアドレスの登録をお願いします。期限のある連絡に対して返信がない場合や連絡が滞りがちになった場合、活動への参加をお断りする場合があります。</li>
+              <li>登録期間は原則、登録した年度の3月31日までです。登録者には年度末に次年度の登録継続の可否を伺います。卒業年度の学生も、卒業生として引き続き登録することが可能です。時期に関わらず、登録の取り消しを希望する場合には、センターまで申し出てください。</li>
+            </ol>
+          </div>
+          <div data-lang="en">
+            <ol class="mt-4 space-y-2 text-xs opacity-85 leading-relaxed list-decimal list-inside">
+              <li>Anyone can apply regardless of nationality, gender, or age.</li>
+              <li>We do not set fixed criteria on language ability or teaching skills, but the sites available will depend on the languages you can use and the subjects you can support. Please understand that we cannot guarantee an activity for every registrant.</li>
+              <li>All communication about activities will be sent to the email address you provide at application. Please check it regularly. We may send attachments or links — please use an address that can reliably receive them. If you do not respond to time-sensitive messages or contact becomes difficult, we may decline your participation.</li>
+              <li>Registration runs through March 31 of the year you register. We will ask each registrant at year-end whether to continue. Students graduating that year may continue registration as alumni. To withdraw at any time, please contact the Center.</li>
+            </ol>
+          </div>
         </details>
 
         <div class="text-sm opacity-85 mb-6">
-          阪大ふくふくセンターホームページのイベント欄に、随時メディエーター登録説明会のお知らせを掲載します。ご確認の上、お申込みください。メディエーター登録説明会の開催情報について、連絡を希望される方は、フォームよりメールアドレスをご登録ください。
+          <span data-lang="ja">阪大ふくふくセンターホームページのイベント欄に、随時メディエーター登録説明会のお知らせを掲載します。ご確認の上、お申込みください。メディエーター登録説明会の開催情報について、連絡を希望される方は、フォームよりメールアドレスをご登録ください。</span>
+          <span data-lang="en">Mediator briefing announcements are posted in the Events section of the Fukufuku Center website. Please review them and apply. To be notified of upcoming briefings, register your email via the form.</span>
         </div>
-        <a href="#contact" class="btn-primary">登録フォームはこちら →</a>
+        <a href="#contact" class="btn-primary"><span data-lang="ja">登録フォームはこちら</span><span data-lang="en">Registration form</span> →</a>
       </div>
     </div>
 
@@ -1479,69 +1516,81 @@
     <div id="org" class="bento bg-white p-8 md:p-14 card-hover scroll-reveal relative overflow-hidden">
       <div class="absolute -right-10 -top-10 w-72 h-72 rounded-full bg-gradient-to-br from-sky2 to-lilac opacity-40 blur-2xl"></div>
       <div class="relative">
-        <div class="text-xs font-en tracking-widest text-ink/50 mb-3">FOR SCHOOLS & COMMUNITY</div>
-        <h3 class="font-black text-3xl md:text-5xl leading-tight mb-2">学校・自治体・団体の方へ</h3>
-        <p class="text-sm text-ink/60 mb-8">2023年度 協働団体 募集要項</p>
+        <div class="text-xs font-en tracking-widest text-ink/50 mb-3">FOR SCHOOLS &amp; COMMUNITY</div>
+        <h3 class="font-black text-3xl md:text-5xl leading-tight mb-2"><span data-lang="ja">学校・自治体・団体の方へ</span><span data-lang="en">For Schools &amp; Organizations</span></h3>
+        <p class="text-sm text-ink/60 mb-8"><span data-lang="ja">2023年度 協働団体 募集要項</span><span data-lang="en">Partner Organization Guidelines (2023)</span></p>
 
         <div class="prose-center text-ink/80 text-[15px] mb-10 max-w-3xl">
-          <p>複言語・複文化共存社会研究センター(通称：阪大ふくふくセンター、以下センター)は、外国にルーツを持つ子どもたちが過ごす現場と、大学で複言語・複文化の力を身につけ、それを社会のために活かしたいと願う学生・卒業生・教職員を繋ぎます。複言語・複文化の力を以て、異なる立場にいる人々を仲介する「メディエーター」と協働して、よりよい活動の実施を目指す団体を募集します。皆さんのご応募をお待ちしています。</p>
+          <p>
+            <span data-lang="ja">複言語・複文化共存社会研究センター(通称：阪大ふくふくセンター、以下センター)は、外国にルーツを持つ子どもたちが過ごす現場と、大学で複言語・複文化の力を身につけ、それを社会のために活かしたいと願う学生・卒業生・教職員を繋ぎます。複言語・複文化の力を以て、異なる立場にいる人々を仲介する「メディエーター」と協働して、よりよい活動の実施を目指す団体を募集します。皆さんのご応募をお待ちしています。</span>
+            <span data-lang="en">The Center connects the places where children with foreign roots spend their time with students, alumni, faculty, and staff who want to bring their multilingual and multicultural skills to society. We invite organizations that wish to work alongside our Mediators to carry out better activities together. We look forward to your application.</span>
+          </p>
         </div>
 
         <div class="p-5 rounded-2xl bg-mint/20 mb-8">
-          <div class="text-xs text-ink/50 font-bold mb-2">応募資格</div>
-          <p class="text-sm">外国にルーツを持つ子どもたちが在籍する学校、支援団体等</p>
+          <div class="text-xs text-ink/50 font-bold mb-2"><span data-lang="ja">応募資格</span><span data-lang="en">Eligibility</span></div>
+          <p class="text-sm"><span data-lang="ja">外国にルーツを持つ子どもたちが在籍する学校、支援団体等</span><span data-lang="en">Schools and support organizations that include children with foreign roots.</span></p>
         </div>
 
-        <div class="text-xs font-en text-ink/50 mb-4">協働内容</div>
+        <div class="text-xs font-en text-ink/50 mb-4"><span data-lang="ja">協働内容</span><span data-lang="en">How collaboration works</span></div>
         <div class="grid md:grid-cols-5 gap-3 mb-10">
           <div class="p-5 rounded-2xl bg-peach/30">
             <div class="font-black text-xl mb-2">1</div>
-            <div class="font-bold text-sm mb-2">応募</div>
-            <p class="text-xs text-ink/70 leading-relaxed">阪大ふくふくセンターホームページの応募フォームより必要事項をご回答ください。</p>
+            <div class="font-bold text-sm mb-2"><span data-lang="ja">応募</span><span data-lang="en">Apply</span></div>
+            <p class="text-xs text-ink/70 leading-relaxed"><span data-lang="ja">阪大ふくふくセンターホームページの応募フォームより必要事項をご回答ください。</span><span data-lang="en">Fill out the application form on the Fukufuku Center website.</span></p>
           </div>
           <div class="p-5 rounded-2xl bg-lemon/40">
             <div class="font-black text-xl mb-2">2</div>
-            <div class="font-bold text-sm mb-2">マッチング</div>
-            <p class="text-xs text-ink/70 leading-relaxed">センターが現場と登録者とのマッチングを行います。必要に応じてお電話での相談や面談を行う場合があります。ご要望に応えられないこともありますのでご了承ください。</p>
+            <div class="font-bold text-sm mb-2"><span data-lang="ja">マッチング</span><span data-lang="en">Matching</span></div>
+            <p class="text-xs text-ink/70 leading-relaxed"><span data-lang="ja">センターが現場と登録者とのマッチングを行います。必要に応じてお電話での相談や面談を行う場合があります。ご要望に応えられないこともありますのでご了承ください。</span><span data-lang="en">The Center matches the site with registrants. Phone or in-person consultations may be held as needed. Please understand we cannot always meet every request.</span></p>
           </div>
           <div class="p-5 rounded-2xl bg-mint/40">
             <div class="font-black text-xl mb-2">3</div>
-            <div class="font-bold text-sm mb-2">紹介</div>
-            <p class="text-xs text-ink/70 leading-relaxed">マッチングした登録者（メディエーター）をセンターから紹介します。指導員やスクールサポーター等として登録が必要な場合は、お手続きをお願いします。</p>
+            <div class="font-bold text-sm mb-2"><span data-lang="ja">紹介</span><span data-lang="en">Introduction</span></div>
+            <p class="text-xs text-ink/70 leading-relaxed"><span data-lang="ja">マッチングした登録者（メディエーター）をセンターから紹介します。指導員やスクールサポーター等として登録が必要な場合は、お手続きをお願いします。</span><span data-lang="en">The Center introduces the matched Mediator. If registration as an instructor or school supporter is required, please follow your site's procedures.</span></p>
           </div>
           <div class="p-5 rounded-2xl bg-sky2/40">
             <div class="font-black text-xl mb-2">4</div>
-            <div class="font-bold text-sm mb-2">共有・相談</div>
-            <p class="text-xs text-ink/70 leading-relaxed">活動中に迷うことや困ったことがあれば、随時センターにご相談いただけます。</p>
+            <div class="font-bold text-sm mb-2"><span data-lang="ja">共有・相談</span><span data-lang="en">Share &amp; Consult</span></div>
+            <p class="text-xs text-ink/70 leading-relaxed"><span data-lang="ja">活動中に迷うことや困ったことがあれば、随時センターにご相談いただけます。</span><span data-lang="en">If questions or difficulties arise during activities, you can consult with the Center anytime.</span></p>
           </div>
           <div class="p-5 rounded-2xl bg-lilac/40">
             <div class="font-black text-xl mb-2">5</div>
-            <div class="font-bold text-sm mb-2">報告</div>
-            <p class="text-xs text-ink/70 leading-relaxed">センターに活動内容の報告をしていただきます。</p>
+            <div class="font-bold text-sm mb-2"><span data-lang="ja">報告</span><span data-lang="en">Report</span></div>
+            <p class="text-xs text-ink/70 leading-relaxed"><span data-lang="ja">センターに活動内容の報告をしていただきます。</span><span data-lang="en">Please report the content of your activity to the Center.</span></p>
           </div>
         </div>
 
         <div class="grid md:grid-cols-2 gap-4 mb-6">
           <div class="p-5 rounded-2xl bg-ink/5">
-            <div class="text-xs text-ink/50 font-bold mb-2">応募受付期間</div>
-            <p class="text-sm">随時</p>
+            <div class="text-xs text-ink/50 font-bold mb-2"><span data-lang="ja">応募受付期間</span><span data-lang="en">Application period</span></div>
+            <p class="text-sm"><span data-lang="ja">随時</span><span data-lang="en">Rolling (always open)</span></p>
           </div>
           <div class="p-5 rounded-2xl bg-ink/5">
-            <div class="text-xs text-ink/50 font-bold mb-2">応募方法</div>
-            <p class="text-sm">応募フォームよりご回答ください。応募フォームからの回答が難しい場合は、ファイルにご記入いただきメールかFAXで送付ください。</p>
+            <div class="text-xs text-ink/50 font-bold mb-2"><span data-lang="ja">応募方法</span><span data-lang="en">How to apply</span></div>
+            <p class="text-sm"><span data-lang="ja">応募フォームよりご回答ください。応募フォームからの回答が難しい場合は、ファイルにご記入いただきメールかFAXで送付ください。</span><span data-lang="en">Please fill out the online form. If that's not possible, fill out the downloadable file and send it by email or fax.</span></p>
           </div>
         </div>
 
         <details class="rounded-2xl bg-ink/5 p-5 mb-6">
-          <summary class="font-bold flex justify-between items-center"><span>注意事項を読む</span><span class="text-xl">＋</span></summary>
-          <ol class="mt-4 space-y-2 text-xs text-ink/75 leading-relaxed list-decimal list-inside">
-            <li>活動内容について、応募フォームに入力していただいた内容に基づき、事前にセンターからヒアリングをさせていただくことがあります。</li>
-            <li>マッチング中に、他の機関等を通じて協働者が見つかった場合は、速やかにセンターまでご連絡をお願いいたします。</li>
-            <li>登録期間は原則、登録した年度の3月31日までです。登録団体には年度末に次年度も登録を継続するかどうかを伺います。時期に関わらず、登録の取り消しを希望する場合には、センターまでお申し出ください。</li>
-          </ol>
+          <summary class="font-bold flex justify-between items-center"><span><span data-lang="ja">注意事項を読む</span><span data-lang="en">Read important notes</span></span><span class="text-xl">＋</span></summary>
+          <div data-lang="ja">
+            <ol class="mt-4 space-y-2 text-xs text-ink/75 leading-relaxed list-decimal list-inside">
+              <li>活動内容について、応募フォームに入力していただいた内容に基づき、事前にセンターからヒアリングをさせていただくことがあります。</li>
+              <li>マッチング中に、他の機関等を通じて協働者が見つかった場合は、速やかにセンターまでご連絡をお願いいたします。</li>
+              <li>登録期間は原則、登録した年度の3月31日までです。登録団体には年度末に次年度も登録を継続するかどうかを伺います。時期に関わらず、登録の取り消しを希望する場合には、センターまでお申し出ください。</li>
+            </ol>
+          </div>
+          <div data-lang="en">
+            <ol class="mt-4 space-y-2 text-xs text-ink/75 leading-relaxed list-decimal list-inside">
+              <li>Based on your application, the Center may contact you beforehand to discuss the proposed activities in detail.</li>
+              <li>If you find a collaborator through another organization during the matching process, please inform the Center promptly.</li>
+              <li>Registration runs through March 31 of the year you register. Partner organizations will be asked at year-end whether to continue. To withdraw at any time, please contact the Center.</li>
+            </ol>
+          </div>
         </details>
 
-        <a href="#contact" class="btn-ghost !border-ink">応募フォーム →</a>
+        <a href="#contact" class="btn-ghost !border-ink"><span data-lang="ja">応募フォーム</span><span data-lang="en">Application form</span> →</a>
       </div>
     </div>
 
@@ -1568,12 +1617,13 @@
 <section class="relative py-20 bg-gradient-to-br from-amber-50 via-rose-50 to-sky-50 overflow-hidden">
   <div class="max-w-5xl mx-auto px-5 md:px-8 scroll-reveal">
     <div class="bento glass p-8 md:p-12 text-center">
-      <div class="chip mb-4 mx-auto"><span class="w-2 h-2 rounded-full bg-rose-400"></span>FUND / ご支援のお願い</div>
-      <h2 class="font-black text-2xl md:text-4xl mb-5 leading-tight">阪大ふくふくセンターへのご支援</h2>
+      <div class="chip mb-4 mx-auto"><span class="w-2 h-2 rounded-full bg-rose-400"></span>FUND / <span data-lang="ja">ご支援のお願い</span><span data-lang="en">Support Us</span></div>
+      <h2 class="font-black text-2xl md:text-4xl mb-5 leading-tight"><span data-lang="ja">阪大ふくふくセンターへのご支援</span><span data-lang="en">Support the Fukufuku Center</span></h2>
       <p class="text-sm md:text-base text-ink/75 leading-loose max-w-3xl mx-auto mb-6">
-        阪大ふくふくセンターの取り組みの充実を図るため、「外国にルーツを持つ子どもたちの支援環境充実事業」基金を立ち上げました。何卒、本事業の趣旨にご賛同いただき、ご支援を賜りますようよろしくお願いいたします。
+        <span data-lang="ja">阪大ふくふくセンターの取り組みの充実を図るため、「外国にルーツを持つ子どもたちの支援環境充実事業」基金を立ち上げました。何卒、本事業の趣旨にご賛同いただき、ご支援を賜りますようよろしくお願いいたします。</span>
+        <span data-lang="en">To strengthen the Center's work, we have established a fund titled "Enhancing the Support Environment for Children with Foreign Roots." We sincerely hope you will share our mission and support this project.</span>
       </p>
-      <a href="#" class="btn-primary">ご支援はこちら（大阪大学未来基金）→</a>
+      <a href="#" class="btn-primary"><span data-lang="ja">ご支援はこちら（大阪大学未来基金）</span><span data-lang="en">Donate via University of Osaka Future Fund</span> →</a>
     </div>
   </div>
 </section>
@@ -1599,8 +1649,8 @@
       <a href="tel:0727305094" class="btn-ghost !bg-white/10 !text-white !border-white/20 hover:!bg-white/20">TEL: 072-730-5094</a>
     </div>
     <div class="grid md:grid-cols-3 gap-4 text-left mt-8">
-      <div class="glass-dark rounded-2xl p-5"><div class="text-xs font-en text-white/50 tracking-widest mb-2">ADDRESS</div><div class="text-sm leading-relaxed">〒562-8678<br />大阪府箕面市船場東3-5-10<br />大阪大学 箕面キャンパス内</div></div>
-      <div class="glass-dark rounded-2xl p-5"><div class="text-xs font-en text-white/50 tracking-widest mb-2">EMAIL</div><div class="text-sm break-all">contact(at)derc.hmt.osaka-u.ac.jp<br /><span class="text-xs text-white/50">※(at)は@に置き換えてください。</span></div></div>
+      <div class="glass-dark rounded-2xl p-5"><div class="text-xs font-en text-white/50 tracking-widest mb-2">ADDRESS</div><div class="text-sm leading-relaxed"><span data-lang="ja">〒562-8678<br />大阪府箕面市船場東3-5-10<br />大阪大学 箕面キャンパス内</span><span data-lang="en">Minoh Campus, University of Osaka<br />3-5-10 Senbahigashi, Minoh-shi,<br />Osaka 562-8678, Japan</span></div></div>
+      <div class="glass-dark rounded-2xl p-5"><div class="text-xs font-en text-white/50 tracking-widest mb-2">EMAIL</div><div class="text-sm break-all">contact(at)derc.hmt.osaka-u.ac.jp<br /><span class="text-xs text-white/50"><span data-lang="ja">※(at)は@に置き換えてください。</span><span data-lang="en">* Replace (at) with @.</span></span></div></div>
       <div class="glass-dark rounded-2xl p-5"><div class="text-xs font-en text-white/50 tracking-widest mb-2">TEL / FAX</div><div class="text-sm">072-730-5094</div></div>
     </div>
   </div>
@@ -1616,37 +1666,37 @@
           <img src="sozai/title.png" alt="阪大ふくふくセンター" class="h-10" />
         </div>
         <div class="text-xs text-white/50 font-en mb-3">University of Osaka DERC</div>
-        <p class="text-sm text-white/60 leading-relaxed max-w-md">大阪大学大学院人文学研究科附属<br />複言語・複文化共存社会研究センター</p>
+        <p class="text-sm text-white/60 leading-relaxed max-w-md"><span data-lang="ja">大阪大学大学院人文学研究科附属<br />複言語・複文化共存社会研究センター</span><span data-lang="en">Diversity and Community Engagement Research Center<br />Graduate School of Humanities, University of Osaka</span></p>
       </div>
       <div class="md:col-span-4">
         <div class="text-xs font-en tracking-widest text-white/40 mb-4">SITEMAP</div>
         <div class="grid grid-cols-2 gap-2 text-sm">
           <a href="#top" class="hover:text-white">TOP</a>
-          <a href="#about" class="hover:text-white">阪大ふくふくセンターとは</a>
-          <a href="#research" class="hover:text-white">活動事例</a>
-          <a href="#student" class="hover:text-white">阪大生・卒業生の方へ</a>
-          <a href="#org" class="hover:text-white">学校・自治体・団体の方へ</a>
-          <a href="#learning" class="hover:text-white">イベント情報</a>
-          <a href="#news" class="hover:text-white">ニュース</a>
-          <a href="#contact" class="hover:text-white">お問い合わせ</a>
+          <a href="#about" class="hover:text-white"><span data-lang="ja">阪大ふくふくセンターとは</span><span data-lang="en">About</span></a>
+          <a href="#research" class="hover:text-white"><span data-lang="ja">活動事例</span><span data-lang="en">What We Do</span></a>
+          <a href="#student" class="hover:text-white"><span data-lang="ja">阪大生・卒業生の方へ</span><span data-lang="en">Students &amp; Alumni</span></a>
+          <a href="#org" class="hover:text-white"><span data-lang="ja">学校・自治体・団体の方へ</span><span data-lang="en">Schools &amp; Organizations</span></a>
+          <a href="#events" class="hover:text-white"><span data-lang="ja">イベント情報</span><span data-lang="en">Events</span></a>
+          <a href="#news" class="hover:text-white"><span data-lang="ja">ニュース</span><span data-lang="en">News</span></a>
+          <a href="#contact" class="hover:text-white"><span data-lang="ja">お問い合わせ</span><span data-lang="en">Contact</span></a>
         </div>
       </div>
       <div class="md:col-span-3">
-        <div class="text-xs font-en tracking-widest text-white/40 mb-4">阪大ふくふくセンターとは</div>
+        <div class="text-xs font-en tracking-widest text-white/40 mb-4"><span data-lang="ja">阪大ふくふくセンターとは</span><span data-lang="en">ABOUT</span></div>
         <div class="space-y-2 text-sm text-white/70">
-          <a href="#greeting" class="block hover:text-white">ご挨拶</a>
-          <a href="#introduction" class="block hover:text-white">設立の趣旨・理念</a>
-          <a href="#introduction" class="block hover:text-white">概要</a>
-          <a href="#organization" class="block hover:text-white">組織</a>
-          <a href="#access" class="block hover:text-white">アクセス</a>
+          <a href="#greeting" class="block hover:text-white"><span data-lang="ja">ご挨拶</span><span data-lang="en">Director's Message</span></a>
+          <a href="#introduction" class="block hover:text-white"><span data-lang="ja">設立の趣旨・理念</span><span data-lang="en">Mission &amp; Vision</span></a>
+          <a href="#introduction" class="block hover:text-white"><span data-lang="ja">概要</span><span data-lang="en">Overview</span></a>
+          <a href="#organization" class="block hover:text-white"><span data-lang="ja">組織</span><span data-lang="en">Structure</span></a>
+          <a href="#access" class="block hover:text-white"><span data-lang="ja">アクセス</span><span data-lang="en">Access</span></a>
         </div>
       </div>
     </div>
     <div class="pt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs text-white/40">
-      <div>Copyright(C) 阪大ふくふくセンター ALL Rights Reserved.</div>
+      <div><span data-lang="ja">Copyright(C) 阪大ふくふくセンター ALL Rights Reserved.</span><span data-lang="en">© Fukufuku Center, University of Osaka. All Rights Reserved.</span></div>
       <div class="flex gap-4">
-        <a href="#" class="hover:text-white">サイトマップ</a>
-        <a href="#" class="hover:text-white">サイトポリシー</a>
+        <a href="#" class="hover:text-white"><span data-lang="ja">サイトマップ</span><span data-lang="en">Sitemap</span></a>
+        <a href="#" class="hover:text-white"><span data-lang="ja">サイトポリシー</span><span data-lang="en">Site Policy</span></a>
       </div>
     </div>
   </div>
