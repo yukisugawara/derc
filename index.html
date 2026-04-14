@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" id="htmlRoot">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -702,6 +702,22 @@
 
   /* 文字選択色 */
   ::selection { background: rgba(255,150,180,.3); color:#1a1530; }
+
+  /* ========== 言語切替 ========== */
+  html[lang="ja"] [data-lang="en"] { display: none !important; }
+  html[lang="en"] [data-lang="ja"] { display: none !important; }
+  html[lang="en"] body { font-family: 'Inter','Zen Maru Gothic',sans-serif; }
+  html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] h4 { letter-spacing: -0.025em !important; }
+  .lang-toggle {
+    display: inline-flex; align-items: center; padding: 4px; border-radius: 999px;
+    background: rgba(255,255,255,.85); border: 1px solid rgba(0,0,0,.06);
+    font-size: .72rem; font-weight: 600; overflow: hidden;
+  }
+  .lang-toggle button {
+    padding: 6px 12px; border-radius: 999px; background: transparent; color: #6a5d7a; transition: all .2s;
+    font-family: 'Inter',sans-serif; letter-spacing: .05em; cursor: pointer; border: none;
+  }
+  .lang-toggle button.active { background: #2a2434; color: #fff; }
 </style>
 </head>
 <body class="font-jp antialiased">
@@ -758,24 +774,30 @@
     <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
       <div class="dropdown relative">
         <a href="#about" class="px-4 py-2 rounded-full hover:bg-white/80 transition flex items-center gap-1">
-          <span class="text-xs font-en text-rose-500">A)</span> 組織概要 <span class="text-xs">▾</span>
+          <span class="text-xs font-en text-rose-500">A)</span>
+          <span data-lang="ja">組織概要</span><span data-lang="en">About</span>
+          <span class="text-xs">▾</span>
         </a>
         <div class="dropdown-menu absolute left-0 top-full pt-2 w-60">
           <div class="glass rounded-2xl p-2 shadow-xl">
-            <a href="#greeting" class="block px-4 py-2 rounded-xl hover:bg-white/80 text-sm">センター長挨拶</a>
-            <a href="#introduction" class="block px-4 py-2 rounded-xl hover:bg-white/80 text-sm">組織紹介（設立の趣旨・理念）</a>
-            <a href="#organization" class="block px-4 py-2 rounded-xl hover:bg-white/80 text-sm">事業内容・組織図・構成員</a>
-            <a href="#access" class="block px-4 py-2 rounded-xl hover:bg-white/80 text-sm">アクセス</a>
+            <a href="#greeting" class="block px-4 py-2 rounded-xl hover:bg-white/80 text-sm"><span data-lang="ja">センター長挨拶</span><span data-lang="en">Director's Message</span></a>
+            <a href="#introduction" class="block px-4 py-2 rounded-xl hover:bg-white/80 text-sm"><span data-lang="ja">組織紹介（設立の趣旨・理念）</span><span data-lang="en">Mission &amp; Vision</span></a>
+            <a href="#organization" class="block px-4 py-2 rounded-xl hover:bg-white/80 text-sm"><span data-lang="ja">事業内容・組織図・構成員</span><span data-lang="en">Activities, Structure &amp; Members</span></a>
+            <a href="#access" class="block px-4 py-2 rounded-xl hover:bg-white/80 text-sm"><span data-lang="ja">アクセス</span><span data-lang="en">Access</span></a>
           </div>
         </div>
       </div>
-      <a href="#research" class="px-4 py-2 rounded-full hover:bg-white/80 transition"><span class="text-xs font-en text-sky-500">B)</span> 研究活動</a>
-      <a href="#works" class="px-4 py-2 rounded-full hover:bg-white/80 transition"><span class="text-xs font-en text-amber-500">C)</span> 活動報告</a>
-      <a href="#field" class="px-4 py-2 rounded-full hover:bg-white/80 transition"><span class="text-xs font-en text-emerald-500">D)</span> 活動の場</a>
-      <a href="#learning" class="px-4 py-2 rounded-full hover:bg-white/80 transition"><span class="text-xs font-en text-purple-500">E)</span> 学びの広場</a>
+      <a href="#research" class="px-4 py-2 rounded-full hover:bg-white/80 transition"><span class="text-xs font-en text-sky-500">B)</span> <span data-lang="ja">研究活動</span><span data-lang="en">Research</span></a>
+      <a href="#works" class="px-4 py-2 rounded-full hover:bg-white/80 transition"><span class="text-xs font-en text-amber-500">C)</span> <span data-lang="ja">活動報告</span><span data-lang="en">Activities</span></a>
+      <a href="#field" class="px-4 py-2 rounded-full hover:bg-white/80 transition"><span class="text-xs font-en text-emerald-500">D)</span> <span data-lang="ja">活動の場</span><span data-lang="en">Get Involved</span></a>
+      <a href="#learning" class="px-4 py-2 rounded-full hover:bg-white/80 transition"><span class="text-xs font-en text-purple-500">E)</span> <span data-lang="ja">学びの広場</span><span data-lang="en">Learning Space</span></a>
     </nav>
     <div class="flex items-center gap-2">
-      <a href="#contact" class="btn-primary text-sm hidden md:inline-flex">お問い合わせ<span aria-hidden>→</span></a>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang-switch="ja" class="active">JP</button>
+        <button type="button" data-lang-switch="en">EN</button>
+      </div>
+      <a href="#contact" class="btn-primary text-sm hidden md:inline-flex"><span data-lang="ja">お問い合わせ</span><span data-lang="en">Contact</span><span aria-hidden>→</span></a>
       <button id="menuBtn" class="lg:hidden w-11 h-11 rounded-full glass flex flex-col items-center justify-center gap-1" aria-label="menu">
         <span class="block w-5 h-0.5 bg-ink"></span><span class="block w-5 h-0.5 bg-ink"></span>
       </button>
@@ -784,19 +806,19 @@
   <div id="mobileMenu" class="lg:hidden hidden border-t border-white/60 bg-white/95 backdrop-blur">
     <div class="px-5 py-3 text-sm">
       <details class="border-b border-ink/10">
-        <summary class="px-3 py-3 font-bold flex justify-between"><span>A) 組織概要</span><span>＋</span></summary>
+        <summary class="px-3 py-3 font-bold flex justify-between"><span>A) <span data-lang="ja">組織概要</span><span data-lang="en">About</span></span><span>＋</span></summary>
         <div class="pb-2">
-          <a href="#greeting" class="block px-6 py-2 text-ink/70">・センター長挨拶</a>
-          <a href="#introduction" class="block px-6 py-2 text-ink/70">・組織紹介</a>
-          <a href="#organization" class="block px-6 py-2 text-ink/70">・事業内容・組織図・構成員</a>
-          <a href="#access" class="block px-6 py-2 text-ink/70">・アクセス</a>
+          <a href="#greeting" class="block px-6 py-2 text-ink/70">・<span data-lang="ja">センター長挨拶</span><span data-lang="en">Director's Message</span></a>
+          <a href="#introduction" class="block px-6 py-2 text-ink/70">・<span data-lang="ja">組織紹介</span><span data-lang="en">Mission &amp; Vision</span></a>
+          <a href="#organization" class="block px-6 py-2 text-ink/70">・<span data-lang="ja">事業内容・組織図・構成員</span><span data-lang="en">Activities, Structure &amp; Members</span></a>
+          <a href="#access" class="block px-6 py-2 text-ink/70">・<span data-lang="ja">アクセス</span><span data-lang="en">Access</span></a>
         </div>
       </details>
-      <a href="#research" class="block px-3 py-3 font-bold border-b border-ink/10">B) 研究活動</a>
-      <a href="#works" class="block px-3 py-3 font-bold border-b border-ink/10">C) 活動報告</a>
-      <a href="#field" class="block px-3 py-3 font-bold border-b border-ink/10">D) 活動の場</a>
-      <a href="#learning" class="block px-3 py-3 font-bold border-b border-ink/10">E) 学びの広場</a>
-      <a href="#contact" class="block text-center mt-3 btn-primary w-full !justify-center">お問い合わせ</a>
+      <a href="#research" class="block px-3 py-3 font-bold border-b border-ink/10">B) <span data-lang="ja">研究活動</span><span data-lang="en">Research</span></a>
+      <a href="#works" class="block px-3 py-3 font-bold border-b border-ink/10">C) <span data-lang="ja">活動報告</span><span data-lang="en">Activities</span></a>
+      <a href="#field" class="block px-3 py-3 font-bold border-b border-ink/10">D) <span data-lang="ja">活動の場</span><span data-lang="en">Get Involved</span></a>
+      <a href="#learning" class="block px-3 py-3 font-bold border-b border-ink/10">E) <span data-lang="ja">学びの広場</span><span data-lang="en">Learning Space</span></a>
+      <a href="#contact" class="block text-center mt-3 btn-primary w-full !justify-center"><span data-lang="ja">お問い合わせ</span><span data-lang="en">Contact</span></a>
     </div>
   </div>
 </header>
@@ -811,19 +833,29 @@
     <div class="grid lg:grid-cols-12 gap-10 items-center">
       <div class="lg:col-span-6 scroll-reveal order-2 lg:order-1">
         <h1 class="sr-only">阪大ふくふくセンター — 外国にルーツを持つ子どもたちの学びを支える</h1>
-        <h2 class="font-rock text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
+        <h2 class="font-rock text-4xl md:text-5xl lg:text-6xl leading-[1.1]" data-lang="ja">
           ことばで、<br />つながる。<br />
           <span class="text-gradient">文化で、ひらく。</span>
         </h2>
-        <p class="mt-8 text-sm md:text-base leading-loose text-ink/70 max-w-lg">
+        <h2 class="font-rock text-4xl md:text-5xl lg:text-6xl leading-[1.1]" data-lang="en">
+          Connect through<br />language.<br />
+          <span class="text-gradient">Open up culture.</span>
+        </h2>
+        <p class="mt-8 text-sm md:text-base leading-loose text-ink/70 max-w-lg" data-lang="ja">
           大阪大学大学院人文学研究科附属<br />
           <strong>複言語・複文化共存社会研究センター</strong>、<br />
           通称「阪大ふくふくセンター」。<br />
           外国にルーツを持つ子どもたちの学びを支える、2023年設立のセンターです。
         </p>
+        <p class="mt-8 text-sm md:text-base leading-loose text-ink/70 max-w-lg" data-lang="en">
+          <strong>Diversity and Community Engagement Research Center</strong><br />
+          (Osaka University Fukufuku Center),<br />
+          a research center at the Graduate School of Humanities, Osaka University.<br />
+          Established in 2023 to support the learning of children with foreign roots in Japan.
+        </p>
         <div class="mt-10 flex flex-wrap gap-3">
-          <a href="#about" class="btn-primary">センターについて</a>
-          <a href="#field" class="btn-ghost">活動に参加する →</a>
+          <a href="#about" class="btn-primary"><span data-lang="ja">センターについて</span><span data-lang="en">About the Center</span></a>
+          <a href="#field" class="btn-ghost"><span data-lang="ja">活動に参加する</span><span data-lang="en">Get Involved</span> →</a>
         </div>
       </div>
       <div class="lg:col-span-6 scroll-reveal order-1 lg:order-2">
@@ -841,10 +873,10 @@
   <div class="max-w-7xl mx-auto px-5 md:px-8">
     <div class="flex flex-wrap items-end justify-between gap-4 mb-14 scroll-reveal">
       <div>
-        <div class="chip mb-4"><span class="w-2 h-2 rounded-full bg-peach"></span>NEWS / 新着情報</div>
-        <h2 class="font-black text-4xl md:text-6xl leading-tight">ニュース</h2>
+        <div class="chip mb-4"><span class="w-2 h-2 rounded-full bg-peach"></span>NEWS / <span data-lang="ja">新着情報</span><span data-lang="en">Latest</span></div>
+        <h2 class="font-black text-4xl md:text-6xl leading-tight"><span data-lang="ja">ニュース</span><span data-lang="en">News</span></h2>
       </div>
-      <a href="#" class="btn-ghost">一覧はこちら →</a>
+      <a href="#" class="btn-ghost"><span data-lang="ja">一覧はこちら</span><span data-lang="en">View all</span> →</a>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -893,16 +925,16 @@
 
   <div class="max-w-7xl mx-auto px-5 md:px-8 relative">
     <div class="max-w-3xl mb-16 scroll-reveal">
-      <div class="chip mb-4"><span class="w-2 h-2 rounded-full bg-lilac"></span>A) ABOUT / 組織概要</div>
-      <h2 class="font-black text-4xl md:text-6xl leading-tight">阪大ふくふく<br />センターとは</h2>
+      <div class="chip mb-4"><span class="w-2 h-2 rounded-full bg-lilac"></span>A) ABOUT / <span data-lang="ja">組織概要</span><span data-lang="en">About</span></div>
+      <h2 class="font-black text-4xl md:text-6xl leading-tight"><span data-lang="ja">阪大ふくふく<br />センターとは</span><span data-lang="en">About<br />Fukufuku Center</span></h2>
     </div>
 
     <!-- section tabs -->
     <div class="flex flex-wrap gap-2 mb-10 scroll-reveal">
-      <a href="#greeting" class="chip !bg-white !border-ink/20 hover:!border-ink">① センター長挨拶</a>
-      <a href="#introduction" class="chip !bg-white !border-ink/20 hover:!border-ink">② 組織紹介</a>
-      <a href="#organization" class="chip !bg-white !border-ink/20 hover:!border-ink">③ 事業内容・組織図・構成員</a>
-      <a href="#access" class="chip !bg-white !border-ink/20 hover:!border-ink">④ アクセス</a>
+      <a href="#greeting" class="chip !bg-white !border-ink/20 hover:!border-ink">① <span data-lang="ja">センター長挨拶</span><span data-lang="en">Director's Message</span></a>
+      <a href="#introduction" class="chip !bg-white !border-ink/20 hover:!border-ink">② <span data-lang="ja">組織紹介</span><span data-lang="en">Mission &amp; Vision</span></a>
+      <a href="#organization" class="chip !bg-white !border-ink/20 hover:!border-ink">③ <span data-lang="ja">事業内容・組織図・構成員</span><span data-lang="en">Activities, Structure &amp; Members</span></a>
+      <a href="#access" class="chip !bg-white !border-ink/20 hover:!border-ink">④ <span data-lang="ja">アクセス</span><span data-lang="en">Access</span></a>
     </div>
 
     <!-- ① センター長挨拶 -->
@@ -1098,13 +1130,13 @@
   <div class="max-w-7xl mx-auto px-5 md:px-8 relative">
     <div class="absolute top-0 right-0 mega-num stroke-text opacity-20 pointer-events-none select-none">B</div>
     <div class="mb-10 scroll-reveal max-w-3xl relative">
-      <div class="chip sticker-blue font-bold mb-4">B) RESEARCH / 研究活動</div>
-      <h2 class="font-rock text-4xl md:text-6xl leading-tight">研究活動</h2>
+      <div class="chip sticker-blue font-bold mb-4">B) RESEARCH / <span data-lang="ja">研究活動</span><span data-lang="en">Research</span></div>
+      <h2 class="font-rock text-4xl md:text-6xl leading-tight"><span data-lang="ja">研究活動</span><span data-lang="en">Research</span></h2>
     </div>
     <div class="max-w-3xl mx-auto scroll-reveal sticker-card p-12 md:p-20 text-center">
       <div class="inline-block text-xs tracking-[.25em] text-ink/50 font-medium mb-4">COMING SOON</div>
-      <h3 class="font-rock text-3xl md:text-4xl mb-4">準備中</h3>
-      <p class="text-ink/65 leading-loose max-w-xl mx-auto">阪大ふくふくセンターの研究成果や進行中のプロジェクトについて、近日公開予定です。</p>
+      <h3 class="font-rock text-3xl md:text-4xl mb-4"><span data-lang="ja">準備中</span><span data-lang="en">Coming soon</span></h3>
+      <p class="text-ink/65 leading-loose max-w-xl mx-auto"><span data-lang="ja">阪大ふくふくセンターの研究成果や進行中のプロジェクトについて、近日公開予定です。</span><span data-lang="en">Information about our research outputs and ongoing projects will be published here soon.</span></p>
     </div>
   </div>
 </section>
@@ -1114,8 +1146,8 @@
   <div class="max-w-7xl mx-auto px-5 md:px-8 relative">
     <div class="absolute top-0 right-0 mega-num stroke-text opacity-20 pointer-events-none select-none">C</div>
     <div class="mb-14 scroll-reveal max-w-3xl relative">
-      <div class="chip sticker-orange font-bold mb-4">C) WORKS / 活動報告</div>
-      <h2 class="font-rock text-4xl md:text-6xl leading-tight">活動報告</h2>
+      <div class="chip sticker-orange font-bold mb-4">C) WORKS / <span data-lang="ja">活動報告</span><span data-lang="en">Activities</span></div>
+      <h2 class="font-rock text-4xl md:text-6xl leading-tight"><span data-lang="ja">活動報告</span><span data-lang="en">Our Activities</span></h2>
     </div>
 
     <!-- 活動事例 -->
@@ -1123,8 +1155,8 @@
       <div class="flex items-center gap-3 mb-8 scroll-reveal">
         <span class="font-chunky text-4xl md:text-5xl">01</span>
         <div>
-          <h3 class="font-rock text-2xl md:text-3xl">活動事例</h3>
-          <p class="text-sm text-ink/70">阪大ふくふくセンター／メディエーターは以下のような活動をおこないます。</p>
+          <h3 class="font-rock text-2xl md:text-3xl"><span data-lang="ja">活動事例</span><span data-lang="en">What We Do</span></h3>
+          <p class="text-sm text-ink/70"><span data-lang="ja">阪大ふくふくセンター／メディエーターは以下のような活動をおこないます。</span><span data-lang="en">Fukufuku Center mediators engage in the following activities.</span></p>
         </div>
       </div>
 
@@ -1176,13 +1208,90 @@
       </div>
     </div>
 
+    <!-- イベント -->
+    <div id="events" class="mb-16">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-8 scroll-reveal">
+        <div class="flex items-center gap-3">
+          <span class="font-chunky text-4xl md:text-5xl">02</span>
+          <div>
+            <h3 class="font-rock text-2xl md:text-3xl"><span data-lang="ja">イベント</span><span data-lang="en">Events</span> <span class="font-en text-lg text-ink/40">EVENT</span></h3>
+            <p class="text-sm text-ink/70"><span data-lang="ja">公開講義・説明会・研修など、参加できる機会のご案内。</span><span data-lang="en">Open lectures, information sessions, and workshops you can join.</span></p>
+          </div>
+        </div>
+        <a href="#" class="btn-ghost !rounded-full"><span data-lang="ja">一覧はこちら</span><span data-lang="en">View all</span> →</a>
+      </div>
+
+      <div class="grid gap-4">
+        <a href="#" class="group block sticker-card rounded-3xl p-6 md:p-7 card-hover scroll-reveal">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="chip"><span data-lang="ja">その他</span><span data-lang="en">Other</span></span>
+                <time class="text-xs text-ink/60 font-en">2026.4.8</time>
+              </div>
+              <h4 class="font-black text-base md:text-lg leading-snug"><span data-lang="ja">【2026.4.25 (土)】授業「在日外国人をとりまく現状と課題を考える」第2回目公開のお知らせ</span><span data-lang="en">[Sat, April 25, 2026] Open class "Current issues surrounding foreign residents in Japan" — Session 2</span></h4>
+            </div>
+            <span class="text-3xl opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
+          </div>
+        </a>
+        <a href="#" class="group block sticker-card rounded-3xl p-6 md:p-7 card-hover scroll-reveal">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="chip"><span data-lang="ja">その他</span><span data-lang="en">Other</span></span>
+                <time class="text-xs text-ink/60 font-en">2026.4.8</time>
+              </div>
+              <h4 class="font-black text-base md:text-lg leading-snug"><span data-lang="ja">【2026.4.11 (土)】授業「在日外国人をとりまく現状と課題を考える」第1回目公開のお知らせ</span><span data-lang="en">[Sat, April 11, 2026] Open class "Current issues surrounding foreign residents in Japan" — Session 1</span></h4>
+            </div>
+            <span class="text-3xl opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
+          </div>
+        </a>
+        <a href="#" class="group block sticker-card rounded-3xl p-6 md:p-7 card-hover scroll-reveal">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="chip"><span data-lang="ja">阪大生・卒業生の方</span><span data-lang="en">Students &amp; Alumni</span></span>
+                <time class="text-xs text-ink/60 font-en">2026.3.11</time>
+              </div>
+              <h4 class="font-black text-base md:text-lg leading-snug"><span data-lang="ja">2026年度春期メディエーター登録説明会　開催のお知らせ</span><span data-lang="en">Spring 2026 Mediator Registration Briefing</span></h4>
+            </div>
+            <span class="text-3xl opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
+          </div>
+        </a>
+        <a href="#" class="group block sticker-card rounded-3xl p-6 md:p-7 card-hover scroll-reveal">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="chip"><span data-lang="ja">その他</span><span data-lang="en">Other</span></span>
+                <time class="text-xs text-ink/60 font-en">2026.1.8</time>
+              </div>
+              <h4 class="font-black text-base md:text-lg leading-snug"><span data-lang="ja">「外国にルーツを持つ子どもの現状と課題を考える」授業公開のお知らせ</span><span data-lang="en">Open class: "Current situation and challenges of children with foreign roots"</span></h4>
+            </div>
+            <span class="text-3xl opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
+          </div>
+        </a>
+        <a href="#" class="group block sticker-card rounded-3xl p-6 md:p-7 card-hover scroll-reveal">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="chip"><span data-lang="ja">その他</span><span data-lang="en">Other</span></span>
+                <time class="text-xs text-ink/60 font-en">2026.1.8</time>
+              </div>
+              <h4 class="font-black text-base md:text-lg leading-snug"><span data-lang="ja">外国人患者対応能力向上研修を行います</span><span data-lang="en">Training for improving medical care for foreign patients</span></h4>
+            </div>
+            <span class="text-3xl opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
     <!-- 学生の体験談 -->
     <div>
       <div class="flex items-center gap-3 mb-8 scroll-reveal">
-        <span class="font-chunky text-4xl md:text-5xl">02</span>
+        <span class="font-chunky text-4xl md:text-5xl">03</span>
         <div>
-          <h3 class="font-rock text-2xl md:text-3xl">学生の体験談</h3>
-          <p class="text-sm text-ink/70">現場で活動した学生・卒業生のリアルな声。</p>
+          <h3 class="font-rock text-2xl md:text-3xl"><span data-lang="ja">学生の体験談</span><span data-lang="en">Student Voices</span></h3>
+          <p class="text-sm text-ink/70"><span data-lang="ja">現場で活動した学生・卒業生のリアルな声。</span><span data-lang="en">Real reflections from students and alumni who worked in the field.</span></p>
         </div>
       </div>
     <div class="space-y-6">
@@ -1255,8 +1364,8 @@
   <div class="pointer-events-none absolute -bottom-20 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-mint to-sky2 opacity-40 blur-3xl"></div>
   <div class="max-w-7xl mx-auto px-5 md:px-8 relative">
     <div class="mb-14 scroll-reveal max-w-3xl">
-      <div class="chip mb-4"><span class="w-2 h-2 rounded-full bg-mint"></span>D) FIELD / 活動の場</div>
-      <h2 class="font-black text-4xl md:text-6xl leading-tight">活動の場</h2>
+      <div class="chip mb-4"><span class="w-2 h-2 rounded-full bg-mint"></span>D) FIELD / <span data-lang="ja">活動の場</span><span data-lang="en">Get Involved</span></div>
+      <h2 class="font-black text-4xl md:text-6xl leading-tight"><span data-lang="ja">活動の場</span><span data-lang="en">Get Involved</span></h2>
     </div>
 
     <!-- 阪大生・卒業生 -->
@@ -1398,82 +1507,6 @@
       </div>
     </div>
 
-    <!-- イベント情報 -->
-    <div id="events" class="mt-16">
-      <div class="flex flex-wrap items-end justify-between gap-4 mb-8 scroll-reveal">
-        <div class="flex items-center gap-3">
-          <span class="font-chunky text-4xl md:text-5xl">03</span>
-          <div>
-            <h3 class="font-rock text-2xl md:text-3xl">イベント <span class="font-en text-lg text-ink/40">EVENT</span></h3>
-            <p class="text-sm text-ink/70">公開講義・説明会・研修など、参加できる機会のご案内。</p>
-          </div>
-        </div>
-        <a href="#" class="btn-ghost sticker-card !rounded-full">一覧はこちら →</a>
-      </div>
-
-      <div class="grid gap-4">
-        <a href="#" class="group block sticker-card rounded-3xl p-6 md:p-7 card-hover scroll-reveal">
-          <div class="flex flex-wrap items-center justify-between gap-4">
-            <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="chip sticker-pink !border-2 !border-ink font-bold">その他</span>
-                <time class="text-xs text-ink/60 font-en">2026.4.8</time>
-              </div>
-              <h4 class="font-black text-base md:text-lg leading-snug">【2026.4.25 (土)】授業「在日外国人をとりまく現状と課題を考える」第2回目公開のお知らせ</h4>
-            </div>
-            <span class="text-3xl opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
-          </div>
-        </a>
-        <a href="#" class="group block sticker-card rounded-3xl p-6 md:p-7 card-hover scroll-reveal">
-          <div class="flex flex-wrap items-center justify-between gap-4">
-            <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="chip sticker-pink !border-2 !border-ink font-bold">その他</span>
-                <time class="text-xs text-ink/60 font-en">2026.4.8</time>
-              </div>
-              <h4 class="font-black text-base md:text-lg leading-snug">【2026.4.11 (土)】授業「在日外国人をとりまく現状と課題を考える」第1回目公開のお知らせ</h4>
-            </div>
-            <span class="text-3xl opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
-          </div>
-        </a>
-        <a href="#" class="group block sticker-card rounded-3xl p-6 md:p-7 card-hover scroll-reveal">
-          <div class="flex flex-wrap items-center justify-between gap-4">
-            <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="chip sticker-acid !border-2 !border-ink font-bold">阪大生・卒業生の方</span>
-                <time class="text-xs text-ink/60 font-en">2026.3.11</time>
-              </div>
-              <h4 class="font-black text-base md:text-lg leading-snug">2026年度春期メディエーター登録説明会　開催のお知らせ</h4>
-            </div>
-            <span class="text-3xl opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
-          </div>
-        </a>
-        <a href="#" class="group block sticker-card rounded-3xl p-6 md:p-7 card-hover scroll-reveal">
-          <div class="flex flex-wrap items-center justify-between gap-4">
-            <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="chip sticker-pink !border-2 !border-ink font-bold">その他</span>
-                <time class="text-xs text-ink/60 font-en">2026.1.8</time>
-              </div>
-              <h4 class="font-black text-base md:text-lg leading-snug">「外国にルーツを持つ子どもの現状と課題を考える」授業公開のお知らせ</h4>
-            </div>
-            <span class="text-3xl opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
-          </div>
-        </a>
-        <a href="#" class="group block sticker-card rounded-3xl p-6 md:p-7 card-hover scroll-reveal">
-          <div class="flex flex-wrap items-center justify-between gap-4">
-            <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="chip sticker-pink !border-2 !border-ink font-bold">その他</span>
-                <time class="text-xs text-ink/60 font-en">2026.1.8</time>
-              </div>
-              <h4 class="font-black text-base md:text-lg leading-snug">外国人患者対応能力向上研修を行います</h4>
-            </div>
-            <span class="text-3xl opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition">→</span>
-          </div>
-        </a>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1482,13 +1515,13 @@
   <div class="max-w-7xl mx-auto px-5 md:px-8 relative">
     <div class="absolute top-0 left-0 mega-num stroke-text opacity-20 pointer-events-none select-none">E</div>
     <div class="mb-10 scroll-reveal max-w-3xl relative">
-      <div class="chip sticker-acid !border-2 !border-ink font-bold mb-4">E) LEARNING / 学びの広場</div>
-      <h2 class="font-rock text-4xl md:text-6xl leading-tight">学びの広場</h2>
+      <div class="chip sticker-acid !border-2 !border-ink font-bold mb-4">E) LEARNING / <span data-lang="ja">学びの広場</span><span data-lang="en">Learning Space</span></div>
+      <h2 class="font-rock text-4xl md:text-6xl leading-tight"><span data-lang="ja">学びの広場</span><span data-lang="en">Learning Space</span></h2>
     </div>
     <div class="max-w-3xl mx-auto scroll-reveal sticker-card p-12 md:p-20 text-center">
       <div class="inline-block text-xs tracking-[.25em] text-ink/50 font-medium mb-4">COMING SOON</div>
-      <h3 class="font-rock text-3xl md:text-4xl mb-4">準備中</h3>
-      <p class="text-ink/65 leading-loose max-w-xl mx-auto">センターが発信する学びのコンテンツ・教材・アーカイブを順次公開予定です。</p>
+      <h3 class="font-rock text-3xl md:text-4xl mb-4"><span data-lang="ja">準備中</span><span data-lang="en">Coming soon</span></h3>
+      <p class="text-ink/65 leading-loose max-w-xl mx-auto"><span data-lang="ja">センターが発信する学びのコンテンツ・教材・アーカイブを順次公開予定です。</span><span data-lang="en">Learning content, materials, and archives from the Center will be published here over time.</span></p>
     </div>
   </div>
 </section>
@@ -1511,16 +1544,20 @@
 <section id="contact" class="relative py-24 md:py-32 overflow-hidden bg-ink text-white">
   <div class="max-w-5xl mx-auto px-5 md:px-8 relative text-center scroll-reveal">
     <div class="chip !bg-white/10 !border-white/20 !text-white mb-6 mx-auto">
-      <span class="w-2 h-2 rounded-full bg-peach animate-pulse"></span>CONTACT / お問い合わせ
+      <span class="w-2 h-2 rounded-full bg-peach animate-pulse"></span>CONTACT / <span data-lang="ja">お問い合わせ</span><span data-lang="en">Get in touch</span>
     </div>
-    <h2 class="font-black text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight mb-8">
+    <h2 class="font-black text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight mb-8" data-lang="ja">
       <span class="text-gradient">ふくふく</span>と、<br />はじめよう。
     </h2>
+    <h2 class="font-black text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight mb-8" data-lang="en">
+      Let's start<br />with <span class="text-gradient">Fukufuku</span>.
+    </h2>
     <p class="text-white/70 text-base md:text-lg leading-loose max-w-2xl mx-auto mb-10">
-      ご相談、活動への参加、講演・研修のご依頼。お気軽にお問い合わせください。
+      <span data-lang="ja">ご相談、活動への参加、講演・研修のご依頼。お気軽にお問い合わせください。</span>
+      <span data-lang="en">For inquiries, collaboration, or requests for lectures and training — please feel free to contact us.</span>
     </p>
     <div class="flex flex-wrap gap-3 justify-center mb-12">
-      <a href="mailto:contact@derc.hmt.osaka-u.ac.jp" class="btn-primary">メールで問い合わせ</a>
+      <a href="mailto:contact@derc.hmt.osaka-u.ac.jp" class="btn-primary"><span data-lang="ja">メールで問い合わせ</span><span data-lang="en">Email us</span></a>
       <a href="tel:0727305094" class="btn-ghost !bg-white/10 !text-white !border-white/20 hover:!bg-white/20">TEL: 072-730-5094</a>
     </div>
     <div class="grid md:grid-cols-3 gap-4 text-left mt-8">
@@ -1586,6 +1623,27 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   document.querySelectorAll('.scroll-reveal').forEach(el => io.observe(el));
+  // 言語切替
+  (function(){
+    var root = document.documentElement;
+    var saved = localStorage.getItem('fuku_lang');
+    if (saved === 'en' || saved === 'ja') root.setAttribute('lang', saved);
+    function updateBtns(){
+      var cur = root.getAttribute('lang');
+      document.querySelectorAll('[data-lang-switch]').forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-lang-switch') === cur);
+      });
+    }
+    updateBtns();
+    document.querySelectorAll('[data-lang-switch]').forEach(function(b){
+      b.addEventListener('click', function(){
+        var l = b.getAttribute('data-lang-switch');
+        root.setAttribute('lang', l);
+        localStorage.setItem('fuku_lang', l);
+        updateBtns();
+      });
+    });
+  })();
   // cursor spotlight
   document.querySelectorAll('.spot-wrap').forEach(el => {
     el.addEventListener('mousemove', (e) => {
